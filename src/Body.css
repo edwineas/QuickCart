@@ -1,0 +1,20 @@
+.body-container {
+  display: flex; /* Make the container a flexbox */
+  justify-content: space-between; /* Align items horizontally */
+  width: 100%; /* Ensure full width for Flexbox distribution */
+  margin: 0 auto;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Center the container horizontally (optional) */
+}
+
+.cart-container {
+  /* Remove sticky styles if previously added */
+  position: static; /* Reset positioning */
+  margin-bottom: 10px; /* Set bottom margin */
+  margin-right: 20px;
+  align-self: flex-end; 
+}
+
+#cart {
+  display: block; /* Clear float if previously used */
+}

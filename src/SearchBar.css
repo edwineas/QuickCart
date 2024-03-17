@@ -1,0 +1,30 @@
+.search-bar {
+    margin: auto;
+    width: 70%; /* Adjust width as needed */
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 0px; /* Adjust margin as needed */
+    border: 1px solid black;
+  }
+  
+  .search-bar input {
+    flex: 1; /* Allow input to grow and fill available space */
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    width: 95.86%;
+  }
+  
+  .search-bar button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer; /* Indicate clickable button */
+  }
+  
+  .search-bar img {
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+  }
+  
