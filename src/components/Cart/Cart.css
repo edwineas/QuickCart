@@ -1,3 +1,8 @@
+.bottomCart{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
 .cart-div{
     background-color: white;
     width: fit-content;
