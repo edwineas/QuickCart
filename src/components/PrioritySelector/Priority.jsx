@@ -7,14 +7,14 @@ const Priority = () => {
       <div className="preference-section box">
         What do you prefer?
         <div className="button-group">
-          <button>Distance</button>
-          <button>Availability</button>
+          <button className="sButton">Distance</button>
+          <button className="sButton">Availability</button>
         </div>
       </div>
       <div className="variation-section box">
-        <button>&lt;&lt;</button>
-        <span>Variation 1</span>
-        <button>&gt;&gt;</button>
+        <button className="sButton">&lt;&lt;</button>
+        <span className="Text">Variation 1</span>
+        <button className="sButton">&gt;&gt;</button>
       </div>
     </div>
   );
