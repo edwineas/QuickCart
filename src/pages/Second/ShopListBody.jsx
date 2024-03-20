@@ -7,16 +7,16 @@ import Footer from '../../components/Footer/Footer';
 export default function ShopListBody() {
     return (
         <>
-        <Navbar />
-        <div className="body-container">
-            <SearchBar />
-            <br></br>
-            <Shops />
-            <Cart />
-        </div>
-        <div id='foot'>
-        <Footer />
-        </div>
+            <Navbar />
+            <div className="body-container">
+                <SearchBar />
+                <br></br>
+                <Shops />
+                <Cart />
+            </div>
+            <div id='foot'>
+                <Footer />
+            </div>
         </>
     );
 }
