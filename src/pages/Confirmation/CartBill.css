@@ -1,0 +1,36 @@
+/* CartBill.css */
+
+.billpopup {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .quantity {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .quantity button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .quantity button:disabled {
+    background-color: #aaa;
+  }
+  
