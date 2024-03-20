@@ -1,6 +1,7 @@
 import Carousel from "../Carousel/Carousel.jsx";
 import Shops from "../ShopGrid/GridCardList.jsx";
-import Cart from "../../images/cart.svg";
+import Cart from "../Cart/Cart.jsx";
+
 import './Body.css';
 
 function Body() {
@@ -10,9 +11,7 @@ function Body() {
         <div className="body-container">
             <Carousel />
             <Shops />
-            <div className="cart-container">
-                <img src={Cart} id="cart" alt="Cart" />
-            </div>
+            <Cart />
             
         </div>
     );
