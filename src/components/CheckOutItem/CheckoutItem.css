@@ -1,0 +1,37 @@
+.checkout-item {
+    display: flex;
+    align-items: center; /* Vertically align content within the item */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Add a light border between items */
+  }
+  
+  .star-rating {
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    margin-right: 10px; /* Add space between rating and item details */
+  }
+  
+  .item-details {
+    flex: 1; /* Allow item details to occupy remaining space */
+  }
+  
+  .item-details p {
+    margin-bottom: 5px; /* Add some space between text elements */
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control button {
+    padding: 5px; /* Adjust padding as needed */
+    border: none; /* Remove borders for cleaner look */
+    background-color: #eee; /* Add background color (optional) */
+    cursor: pointer; /* Indicate clickable buttons */
+  }
+  
+  .quantity-control span {
+    margin: 0 5px; /* Add spacing around quantity */
+  }
+  

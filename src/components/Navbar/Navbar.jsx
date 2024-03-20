@@ -11,14 +11,14 @@ const Navbar = ({ onSearchClick }) => {
     <div>
       <img src={Logo} id="logo" alt='' />
       <div className="navbar">
-        <button onClick={onSearchClick}>
+        <button onClick={onSearchClick} id='btn'>
           <div className="navcontents" onClick={() => navigate('/shop-list')}>
             <img src={Search} id="search" alt='' />Search
           </div>
         </button>
         {/* <Link to="/shop-list">Shop List</Link> Use Link for other navigation */}
-        <button><div className="navcontents"><img src={Help} id="help" alt='' />Help</div></button>
-        <button><div className="navcontents"><img src={Profile} id="profile" alt='' />{/*Sign In*/}</div></button>
+        <button id='btn'><div className="navcontents"><img src={Help} id="help" alt='' />Help</div></button>
+        <button id='btn'><div className="navcontents"><img src={Profile} id="profile" alt='' />{/*Sign In*/}</div></button>
       </div>
       <hr />
       <br />
