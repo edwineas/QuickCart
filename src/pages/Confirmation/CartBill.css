@@ -1,36 +1,123 @@
 /* CartBill.css */
 
-.billpopup {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 300px;
-    background-color: white;
-    padding: 20px;
+.bill-container {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    width: 90%;
+    max-width: 600px;
+    min-height: fit-content;
+    /* margin: auto; */
+    border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .item {
+}
+
+.cart-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart-title {
+    font-weight: 500;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: #435BDA;
+}
+
+.cart-subtitle {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.item-container {
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.store-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.item-view {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .quantity {
+}
+
+.item-name {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.itemaddprice {
     display: flex;
-    gap: 10px;
-  }
-  
-  .quantity button {
-    padding: 5px 10px;
+
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.quantity {
+    margin: 0 10px;
+}
+
+.item-price {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.bill-details-container {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.bill-details-title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.billitem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-item-total,
+.bill-delivery-fee,
+.bill-custom-delivery-time,
+.bill-taxes-charges,
+.bill-total,
+.bill-discount,
+.bill-final-total {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.bill-item-total-price,
+.bill-delivery-fee-price,
+.bill-taxes-charges-price,
+.bill-total-price,
+.bill-discount-price,
+.bill-final-total-price {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.continue-button {
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 20px;
     border: none;
-    background-color: #ddd;
     border-radius: 5px;
+    background-color: #435BDA;
+    color: #fff;
     cursor: pointer;
-  }
-  
-  .quantity button:disabled {
-    background-color: #aaa;
-  }
-  
+    width: 100%;
+}
