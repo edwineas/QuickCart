@@ -1,7 +1,7 @@
 import React from 'react';
 import GridCard from './GridCard';
 import './Grid.css';
-import Img from './images/sampleImage.png';
+import Img from '../../images/sampleImage.png';
 const GridCardList = () => {
   const images = [
     { src: Img, name: 'Elite Supermarket 1', rating: 4.5 },

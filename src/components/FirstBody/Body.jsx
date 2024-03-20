@@ -1,6 +1,6 @@
-import Carousel from "./Carousel.jsx";
-import Shops from "./GridCardList.jsx";
-import Cart from "./images/cart.svg";
+import Carousel from "../Carousel/Carousel.jsx";
+import Shops from "../ShopGrid/GridCardList.jsx";
+import Cart from "../../images/cart.svg";
 import './Body.css';
 
 function Body() {

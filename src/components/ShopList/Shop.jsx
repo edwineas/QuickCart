@@ -1,6 +1,6 @@
 import React from 'react';
 import './Shops.css'; // Import CSS file if needed
-import Img from './images/sampleImage.png'
+import Img from '../../images/sampleImage.png';
 const Shop = ({ name }) => {
   return (
     <div className="shop-item">

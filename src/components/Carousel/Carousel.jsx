@@ -1,6 +1,6 @@
-import Carrot from './images/carrots.svg';
-import Cauliflower from './images/cauliflower.svg';
-import Onion from './images/onions.svg';
+import Carrot from '../../images/carrots.svg';
+import Cauliflower from '../../images/cauliflower.svg';
+import Onion from '../../images/onions.svg';
 import './Carousel.css'
 
 const images = [

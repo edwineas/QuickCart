@@ -14,8 +14,14 @@
   display: block; 
 } */
 
-#cart2{
-  position: fixed;
-  top: 575px;
-  left: 1322px;
+.cart-container {
+  
+  position: relative; 
+  margin-bottom: 210px; 
+  margin-right: 20px;
+  align-self: flex-end; 
+}
+
+#cart2 {
+  display: block; 
 }

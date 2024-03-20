@@ -1,0 +1,7 @@
+.priority-container, {
+    display: flex;
+  }
+
+  .priority-container div {
+    margin-right: 10px; /* Optional: Add spacing between the words */
+  }

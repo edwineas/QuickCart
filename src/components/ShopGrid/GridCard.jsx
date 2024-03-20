@@ -1,5 +1,5 @@
 import React from 'react';
-import Rating from "./images/star_rating.svg"
+import Rating from "../../images/star_rating.svg"
 
 const GridCard = ({ imageSrc, imageName, imageRating }) => {
   return (

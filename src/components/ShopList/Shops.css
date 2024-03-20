@@ -42,4 +42,16 @@
   
  #shops{
      height: 40px;
+     
  }
+
+ #foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+   /* Adjust text color as needed */
+  text-align: center;
+  padding: 0px; /* Adjust padding as needed */
+}
+
