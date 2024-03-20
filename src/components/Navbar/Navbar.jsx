@@ -18,10 +18,9 @@ const Navbar = ({ onSearchClick }) => {
         </button>
         {/* <Link to="/shop-list">Shop List</Link> Use Link for other navigation */}
         <button id='btn'><div className="navcontents"><img src={Help} id="help" alt='' />Help</div></button>
-        <button id='btn'><div className="navcontents"><img src={Profile} id="profile" alt='' />{/*Sign In*/}</div></button>
+        <button id='btn'><div className="navcontents"><img src={Profile} id="profile" alt='' onClick={() => navigate('/login')}/>{/*Sign In*/}</div></button>
       </div>
       <hr />
-      <br />
       <br />
     </div>
   );
