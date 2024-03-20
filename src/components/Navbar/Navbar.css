@@ -12,13 +12,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-img{
+#logo,#search,#help,#profile{
     position: relative;
     padding-right: 5px;
     top: 4px;
 }
 
-button{
+#btn{
     border: none;
     background-color: white;
     cursor: pointer;
