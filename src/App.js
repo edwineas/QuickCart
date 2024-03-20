@@ -4,6 +4,7 @@ import './App.css';
 import First from './pages/First/First';
 import Checkout from './pages/Third/Checkout';
 import Cart from './components/Cart/Cart';
+import Login from './pages/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/cart',
     element: <Cart/>,
+  },
+  {
+    path: '/login',
+    element: <Login/>,
   }
 ]);
 
