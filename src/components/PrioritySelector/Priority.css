@@ -1,7 +1,38 @@
-.priority-container, {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+.sButton{
+  display: inline-flex;
+  background-color: #435BDA;
+  margin: 0 10px;
+  color: white;
+  padding: 10 0px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 7px 6px;
+}
+.priority-container {
     display: flex;
   }
 
+.box {
+    display: flex;
+    margin-left: 10px;
+    border:  2px solid #435BDA;
+    border-radius: 10px;
+}  
+
   .priority-container div {
     margin-right: 10px; /* Optional: Add spacing between the words */
+  }
+
+  .preference-section{
+    padding: 10px;
+  }
+
+  .variation-section{
+    padding: 10px;
   }
