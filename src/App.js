@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart';
 import Login from './pages/Login/Login';
 import RegisterShop from './pages/Register/RegisterShop';
 import CartBill from './pages/Confirmation/CartBill';
+import Thankyou  from './pages/Thankyou/Thankyou';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/cartbill',
     element: <CartBill/>,
+  },
+  {
+    path: '/thankyou',
+    element: <Thankyou/>,
   },
 ]);
 

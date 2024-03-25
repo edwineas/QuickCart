@@ -1,0 +1,37 @@
+
+.thankyou-container{
+    margin: 100px 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: first baseline; /* Updated gap value */
+
+}
+
+.thankyou-heading{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+
+.thankyou-sub-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thankyou-left-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Updated gap value */
+    justify-content: space-evenly;
+    align-items: first baseline;
+}
+
+.thankyou-right-section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
