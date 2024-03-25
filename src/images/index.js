@@ -6,3 +6,4 @@ export { default as Search } from './search.svg';
 export { default as Help } from './help.svg';
 export { default as Profile } from './profile.svg';
 export { default as Logo } from './logo.svg';
+export { default as Thankimg } from './thankyou_img.png';
