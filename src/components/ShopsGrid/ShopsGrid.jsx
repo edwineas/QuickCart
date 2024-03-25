@@ -1,7 +1,6 @@
 import React from 'react';
-import Rating from "../../images/star_rating.svg"
-import Shops from '../ShopList/Shops';
-
+import Rating from "../../images/star_rating.svg";
+import './ShopsGrid.css';
 const ShopsGrid = ({ shopSrc, shopName, shopRating }) => {
   return (
     <div className="grid-card">
