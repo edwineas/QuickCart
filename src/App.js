@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Checkout from './pages/Third/Checkout';
 import RegisterShop from './pages/Register/RegisterShop';
-import CartBill from './pages/Confirmation/CartBill';
 import { Navbar, Cart, Footer } from './components';
-import { Feed, Login, SearchPage, Thankyou } from './pages';
+import { Feed, Login, SearchPage, Thankyou, CartBill} from './pages';
 
 function App() {
   
