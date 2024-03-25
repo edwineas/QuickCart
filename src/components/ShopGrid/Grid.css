@@ -4,7 +4,7 @@
     margin-left: 152px;
     margin-right: 152px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust as needed */
     gap: 20px; /* Adjust gap between cards */
     cursor: pointer;
   }

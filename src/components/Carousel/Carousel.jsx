@@ -7,6 +7,15 @@ const images = [
   Carrot,
   Cauliflower,
   Onion,
+  Carrot,
+  Cauliflower,
+  Onion,
+  Carrot,
+  Cauliflower,
+  Onion,
+  Carrot,
+  Cauliflower,
+  Onion,
 ];
 
 const handleClick = (image) => {

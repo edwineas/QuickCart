@@ -6,6 +6,9 @@ const shops = [
   { name: 'Elite Supermarket' },
   { name: 'Fresh Choice' },
   { name: 'Super Saver' },
+  { name: 'Elite Supermarket' },
+  { name: 'Fresh Choice' },
+  { name: 'Super Saver' }
   // Add more shops to the list
 ];
 
