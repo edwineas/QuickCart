@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchPage from './pages/SearchPage/SearchPage';
 import './App.css';
 import Checkout from './pages/Third/Checkout';
 import RegisterShop from './pages/Register/RegisterShop';
 import CartBill from './pages/Confirmation/CartBill';
+import { Navbar, Cart, Footer } from './components';
+import { Feed, Login, SearchPage } from './pages';
+
 function App() {
   
   return (
