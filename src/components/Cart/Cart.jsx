@@ -12,7 +12,7 @@ const Cart = () => {
                     }
                 />
                 <div className="cart-count-div">
-                    <p className='cart-count'>1</p>
+                    <p className='cart-count'>0</p>
                 </div>
             </div>
         </div>
