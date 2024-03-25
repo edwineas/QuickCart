@@ -2,7 +2,7 @@ import React from 'react';
 import './Thankyou.css';
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from '../../images';
 
-const App = () => {
+const Thankyou = () => {
   return (
     <div className="thankyou-container">
       <h1 className="thankyou-heading">Thank you for your purchase!</h1>
@@ -24,4 +24,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Thankyou;

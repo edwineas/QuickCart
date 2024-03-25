@@ -5,7 +5,7 @@ import Checkout from './pages/Third/Checkout';
 import RegisterShop from './pages/Register/RegisterShop';
 import CartBill from './pages/Confirmation/CartBill';
 import { Navbar, Cart, Footer } from './components';
-import { Feed, Login, SearchPage } from './pages';
+import { Feed, Login, SearchPage, Thankyou } from './pages';
 
 function App() {
   
@@ -21,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registershop" element={<RegisterShop />} />
           <Route path="/cartbill" element={<CartBill />} />
+          <Route path="/thankyou" element={<Thankyou />} />
         </Routes>
         <Footer />
       </Router>
