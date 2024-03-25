@@ -23,19 +23,19 @@ const router = createBrowserRouter([
   },
   {
     path: '/cart',
-    element: <Cart/>,
+    element: <Cart />,
   },
   {
     path: '/login',
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: '/registershop',
-    element: <RegisterShop/>,
+    element: <RegisterShop />,
   },
   {
     path: '/cartbill',
-    element: <CartBill/>,
+    element: <CartBill />,
   },
 ]);
 
@@ -44,8 +44,8 @@ function App() {
 
   return (
     <>
-        <RouterProvider router={router} />
-    </>    
+      <RouterProvider router={router} />
+    </>
   );
 }
 
