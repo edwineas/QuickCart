@@ -51,9 +51,9 @@ function Feed() {
             ))}
           </div>
         </div>
+        <br />
         <div className="gridcardlist">
           <div className="feed-h1">Top shops near</div>
-          <br></br>
           <div className="grid-card-list">
             {shops.map((shop, index) => (
               <ShopsGrid key={index} shopSrc={shop.src} shopName={shop.name} shopRating={shop.rating} onClick={() => handleClick(shop)} />
