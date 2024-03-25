@@ -9,7 +9,7 @@ const Navbar = ({ onSearchClick }) => {
   const navigate = useNavigate();
   return (
     <div>
-      <img src={Logo} id="logo" alt='' />
+      {/* <img src={Logo} id="logo" alt='' /> */}
       <div className="navbar">
         <button onClick={onSearchClick} id='btn'>
           <div className="navcontents" onClick={() => navigate('/shop-list')}>
