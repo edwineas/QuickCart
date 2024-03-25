@@ -1,7 +1,4 @@
-
-import Body from '../../components/FirstBody/Body.jsx';
-import Navbar from '../../components/Navbar/Navbar.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
+import { Carousel, GridCardList, Cart,Footer } from '../../components';
 
 function Feed() {
 
@@ -9,10 +6,14 @@ function Feed() {
   return (
     <>
       <div className="app-container">
-        <Body />
+        <div className="body-container">
+          <Carousel />
+          <GridCardList />
+          <Cart />
+
+        </div>
 
       </div>
-      <Footer />
     </>
   )
 
