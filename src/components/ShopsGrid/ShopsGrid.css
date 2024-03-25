@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+.grid-card {
+  background-color: #f5f5f5;
+  margin-right: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.grid-card img {
+  width: 100%;
+  /* Adjust image width if needed */
+}
+
+#star {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.rating {
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+
+/* 
+.shopName{
+  margin-left: 15px;
+} */
