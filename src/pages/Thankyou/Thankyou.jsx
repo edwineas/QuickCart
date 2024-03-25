@@ -1,5 +1,6 @@
 import React from 'react';
 import './Thankyou.css';
+import { Carrot, Cauliflower, Onion, sampleImage as Img } from '../../images';
 
 const App = () => {
   return (
