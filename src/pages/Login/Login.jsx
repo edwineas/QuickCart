@@ -15,7 +15,6 @@ const LoginPage = () => {
 
     return (
         <>
-            <Navbar />
             <div className='login-main'>
                 <div className="login-container">
                     <h1 className='loginhead'>Login</h1>

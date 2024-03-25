@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.feed-container {
+    display: flex;
+    /* Make the container a flexbox */
+    justify-content: space-between;
+    /* Align items horizontally */
+    width: 100%;
+    /* Ensure full width for Flexbox distribution */
+    margin: 0 auto;
+    flex-direction: column;
+    /* Stack elements vertically */
+    justify-content: space-between;
+    /* Center the container horizontally (optional) */
+}
+
+.cart-container {
+    /* Remove sticky styles if previously added */
+    position: static;
+    /* Reset positioning */
+    margin-bottom: 10px;
+    /* Set bottom margin */
+    margin-right: 20px;
+    align-self: flex-end;
+}
+
+#cart {
+    display: block;
+    /* Clear float if previously used */
+}
+
+.feed-h1 {
+    margin-top: 20px;
+    margin-left: 152px;
+    font-weight: bold;
+    font-size: larger;
+    padding-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel {
+    margin-left: 152px;
+}
+
+.carousel-item {
+    padding: 1px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+
+
+.grid-card-list {
+    margin-left: 152px;
+    margin-right: 152px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Adjust as needed */
+    gap: 20px;
+    /* Adjust gap between cards */
+    cursor: pointer;
+}
+
+.grid-card {
+    background-color: #f5f5f5;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.grid-card img {
+    width: 100%;
+    /* Adjust image width if needed */
+}
+
+
+#star {
+    position: relative;
+    top: 5px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.rating {
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+p {
+    margin-left: 15px;
+}

@@ -1,13 +1,11 @@
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Shops from '../../components/ShopList/Shops';
 import Cart from '../../components/Cart/Cart';
-import './ShopListBody.css';
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
-export default function ShopListBody() {
+import './SearchPage.css';
+
+export default function SearchPage() {
     return (
         <>
-            <Navbar />
             <div className="body-container">
                 <SearchBar />
                 <br></br>
@@ -15,7 +13,6 @@ export default function ShopListBody() {
                 <Cart />
             </div>
             <div id='foot'>
-                <Footer />
             </div>
         </>
     );
