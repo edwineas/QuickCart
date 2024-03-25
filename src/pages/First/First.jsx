@@ -10,10 +10,6 @@ return(
 <>
 <Navbar/>
   <div className="app-container">
-
-    <div className="content">
-      
-    </div>
     <Body />
 
   </div>
