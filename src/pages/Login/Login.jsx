@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
-//import navbar
-import Navbar from '../../components/Navbar/Navbar';
-// import navbar css
+import { Link } from 'react-router-dom';
+import { RegisterShop } from '../Register/RegisterShop'
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -22,7 +21,7 @@ const LoginPage = () => {
                     <input className='logininput' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className='loginbutton' onClick={handleLogin}>Login</button>
                     <a className='loginlink' href="/forgot-password">Forgot Password</a>
-                    <a className='loginlink' href="/signup">New User? Signup</a>
+                    <Link to="/registershop" className='loginlink'>New User? Signup</Link>
                 </div>
             </div>
 

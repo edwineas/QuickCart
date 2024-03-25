@@ -8,7 +8,9 @@ const shops = [
   { name: 'Super Saver' },
   { name: 'Elite Supermarket' },
   { name: 'Fresh Choice' },
-  { name: 'Super Saver' }
+  { name: 'Super Saver' },
+  { name: 'Elite Supermarket' },
+  { name: 'Fresh Choice' }
   // Add more shops to the list
 ];
 
