@@ -1,6 +1,6 @@
 import React from 'react';
 import './Thankyou.css';
-import { Carrot, Cauliflower, Onion, sampleImage as Img } from '../../images';
+import { Thankimg } from '../../images';
 
 const Thankyou = () => {
   return (
@@ -17,7 +17,7 @@ const Thankyou = () => {
             <button className="order-details-button">View order details</button>
         </div>
         <div className="thankyou-right-section">
-          <img src="\images\thankyou_img.png" alt="Thank You" className="thankyou-image" />
+          <img src={Thankimg} alt="Thank You" className="thankyou-image" />
         </div>
       </div>
     </div>

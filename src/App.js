@@ -4,9 +4,8 @@ import './App.css';
 
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
-import CartBill from './pages/Confirmation/CartBill';
 import { Navbar, Cart, Footer } from './components';
-import { Feed, Login, SearchPage, Thankyou } from './pages';
+import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer} from './pages';
 
 
 
@@ -59,6 +58,7 @@ function App() {
           <Route path="/registershop" element={<RegisterShop />} />
           <Route path="/cartbill" element={<CartBill />} />
           <Route path="/thankyou" element={<Thankyou />} />
+          <Route path="/registercustomer" element={<RegisterCustomer />} />
         </Routes>
         <Footer />
       </Router>
