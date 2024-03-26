@@ -1,37 +1,49 @@
-.checkout-item {
+.item-box {
+    border: 1px solid black;
+    padding: 25px;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .item-row {
     display: flex;
-    align-items: center; /* Vertically align content within the item */
-    padding: 10px;
-    border-bottom: 1px solid #ddd; /* Add a light border between items */
+    justify-content: space-between; /* Distribute elements evenly */
+    background-color: #F3F3F3;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
   }
   
-  .star-rating {
-    width: 20px; /* Adjust width as needed */
-    height: 20px; /* Adjust height as needed */
-    margin-right: 10px; /* Add space between rating and item details */
-  }
   
-  .item-details {
-    flex: 1; /* Allow item details to occupy remaining space */
-  }
   
-  .item-details p {
-    margin-bottom: 5px; /* Add some space between text elements */
+  #Add,
+  #Remove {
+    /* Remove inline styles and margins */
+    margin: 0;
+    background-color: white;
+    border: 0px;
   }
   
   .quantity-control {
-    display: flex;
-    align-items: center;
+    display: flex; /* Wrap buttons and quantity */
+    align-items: center; /* Vertically align buttons and quantity */
   }
   
-  .quantity-control button {
-    padding: 5px; /* Adjust padding as needed */
-    border: none; /* Remove borders for cleaner look */
-    background-color: #eee; /* Add background color (optional) */
-    cursor: pointer; /* Indicate clickable buttons */
-  }
-  
-  .quantity-control span {
-    margin: 0 5px; /* Add spacing around quantity */
-  }
-  
+.total{
+  display: flex;
+  justify-content: flex-end;
+  background-color: #F3F3F3;
+  width: 100%;
+  padding: 5px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.rating {
+  margin-left: 0;
+  padding-bottom: 10px;
+}
+
+#sp {
+  padding: 0 7px;
+}

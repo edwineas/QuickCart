@@ -1,11 +1,48 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Checkout from './pages/Third/Checkout';
+
+import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import CartBill from './pages/Confirmation/CartBill';
 import { Navbar, Cart, Footer } from './components';
 import { Feed, Login, SearchPage, Thankyou } from './pages';
+
+
+
+
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <First />,
+//   },
+//   {
+//     path: '/shop-list',
+//     element: <ShopListBody />,
+//   },
+//   {
+//     path: '/checkout',
+//     element: <Checkout />,
+//   },
+//   {
+//     path: '/cart',
+//     element: <Cart/>,
+//   },
+//   {
+//     path: '/login',
+//     element: <Login/>,
+//   },
+//   {
+//     path: '/registershop',
+//     element: <RegisterShop/>,
+//   },
+//   {
+//     path: '/cartbill',
+//     element: <CartBill/>,
+//   },
+// ]);
+
 
 function App() {
   
@@ -16,7 +53,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/searchpage" element={<SearchPage />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cart-page" element={<CartPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registershop" element={<RegisterShop />} />

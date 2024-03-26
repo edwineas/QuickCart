@@ -1,0 +1,18 @@
+.cbtn{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+#Continue {
+    display: inline-flex;
+    background-color: #435BDA;
+    margin: 0 10px;
+    color: white;
+    padding: 10 0px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 7px 6px;
+  }
+  

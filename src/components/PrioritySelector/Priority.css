@@ -16,6 +16,9 @@ body{
 }
 .priority-container {
     display: flex;
+    margin: auto;
+    margin-top: 50px;
+    width: 94.5%;
   }
 
 .box {
