@@ -2,22 +2,39 @@ import React, { useState } from 'react';
 import './NewStock.css';
 
 const NewStock = () => {
-  const [search, setSearch] = useState('');
-  const [quantity, setQuantity] = useState(0);
+  const [items, setItems] = useState([
+    { name: 'Item 1', quantity: 0 },
+    { name: 'Item 2', quantity: 0 },
+    { name: 'Item 3', quantity: 0 },
+    { name: 'Item 4', quantity: 0 },
+  ]);
+  const [newItem, setNewItem] = useState('');
 
-  const handleIncrease = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const handleDecrease = () => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    if (newItem !== '') {
+      setItems([...items, { name: newItem, quantity: 0 }]);
+      setNewItem('');
     }
   };
 
-  const handleConfirm = () => {
+  const handleIncrease = (index) => {
+    const newItems = [...items];
+    newItems[index].quantity++;
+    setItems(newItems);
+  };
+
+  const handleDecrease = (index) => {
+    const newItems = [...items];
+    if (newItems[index].quantity > 0) {
+      newItems[index].quantity--;
+    }
+    setItems(newItems);
+  };
+
+  const handleConfirmChanges = () => {
     // Handle the confirmation logic here
-    console.log(`Confirmed quantity for ${search}: ${quantity}`);
+    console.log('Changes confirmed');
   };
 
   return (
@@ -27,17 +44,22 @@ const NewStock = () => {
         id="search"
         type="text"
         placeholder="Search item..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
         className="newStock-searchInput"
       />
-      <label htmlFor="quantity" className="newStock-quantityLabel">Quantity:</label>
-      <div className="newStock-quantityControl">
-        <button onClick={handleDecrease} className="newStock-decreaseButton">-</button>
-        <span id="quantity" className="newStock-quantityDisplay">{quantity}</span>
-        <button onClick={handleIncrease} className="newStock-increaseButton">+</button>
-      </div>
-      <button onClick={handleConfirm} className="newStock-confirmButton">Confirm</button>
+      <button onClick={handleAddItem} className="newStock-addButton">Add Item</button>
+      <ul className="newStock-itemList">
+        {items.map((item, index) => (
+          <li key={index} className="newStock-item">
+            <span className="newStock-itemName">{item.name}</span>
+            <button onClick={() => handleDecrease(index)} className="newStock-decreaseButton">-</button>
+            <span className="newStock-itemQuantity">{item.quantity}</span>
+            <button onClick={() => handleIncrease(index)} className="newStock-increaseButton">+</button>
+          </li>
+        ))}
+      </ul>
+      <button onClick={handleConfirmChanges} className="newStock-confirmChangesButton">Confirm Changes</button>
     </div>
   );
 };
