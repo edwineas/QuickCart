@@ -5,3 +5,4 @@ export { default as Login } from './Login/Login';
 export { default as RegisterShop } from './Register/RegisterShop';
 export { default as Thankyou } from './Thankyou/Thankyou';
 export { default as CartBill } from './Confirmation/CartBill';
+export { default as RegisterCustomer } from './Register/RegisterCustomer';
