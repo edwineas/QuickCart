@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
-import { Navbar, Cart, Footer } from './components';
+import { Navbar, Cart, Footer, Popup } from './components';
 import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer} from './pages';
 
 
@@ -52,6 +51,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/searchpage" element={<SearchPage />} />
+          <Route path='/popup' element={<Popup/>} />
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

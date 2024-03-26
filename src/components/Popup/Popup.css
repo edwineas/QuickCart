@@ -1,0 +1,53 @@
+.popup-container {
+    position: fixed; /* Position the container fixed on the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning based on centering */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Center the popup content horizontally */
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure the popup is above other elements */
+    width: 100%; /* Stretch horizontally (adjust as needed) */
+    height: 100vh; /* Stretch vertically (adjust as needed) */
+  }
+  
+  .popup {
+    background-color: #fff; /* White background for the popup */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding inside the popup */
+    text-align: center; /* Center text content */
+  }
+  
+  .vegetable-image {
+    width: 150px; /* Adjust image width as needed */
+    height: 150px; /* Adjust image height as needed */
+    display: block; /* Ensure image takes up full width on a new line */
+    margin: 0 auto; /* Center image horizontally */
+  }
+  
+  .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto; /* Add margin top and center horizontally */
+  }
+  
+  .quantity-control button {
+    padding: 5px; /* Adjust button padding */
+    border: none; /* Remove button borders */
+    cursor: pointer; /* Indicate clickable behavior */
+  }
+  
+  .vegetable-price {
+    margin: 5px 0; /* Add some margin top and bottom */
+  }
+  
+  .add-to-cart {
+    padding: 10px 20px; /* Adjust button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners for the button */
+    background-color: #007bff; /* Blue background color */
+    color: white;
+  }
+    
