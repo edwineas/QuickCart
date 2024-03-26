@@ -4,7 +4,7 @@ import './App.css';
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import { Navbar, Cart, Footer, Popup } from './components';
-import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer} from './pages';
+import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock} from './pages';
 
 
 
@@ -59,6 +59,7 @@ function App() {
           <Route path="/cartbill" element={<CartBill />} />
           <Route path="/thankyou" element={<Thankyou />} />
           <Route path="/registercustomer" element={<RegisterCustomer />} />
+          <Route path="/newstock" element={<NewStock />} />
         </Routes>
         <Footer />
       </Router>
