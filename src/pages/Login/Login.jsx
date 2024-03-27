@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
-import { RegisterShop } from '../Register/RegisterShop'
+import axios from 'axios';  // Import Axios library
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        // Handle login logic here give a alert 
-        alert('Login Successful');
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/accounts/login/', {
+                username: username,
+                password: password
+            });
+            alert('Login Successful');  // Display alert for successful login
+            // Redirect or navigate to the home page
+        } catch (error) {
+            console.error('Login failed:', error);
+            // alert('Login failed. Please check your username and password.');  // Display alert for failed login
+            alert(error);
+        }
     };
 
     return (
