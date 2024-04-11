@@ -7,41 +7,6 @@ import { Navbar, Cart, Footer, Popup } from './components';
 import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock} from './pages';
 
 
-
-
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <First />,
-//   },
-//   {
-//     path: '/shop-list',
-//     element: <ShopListBody />,
-//   },
-//   {
-//     path: '/checkout',
-//     element: <Checkout />,
-//   },
-//   {
-//     path: '/cart',
-//     element: <Cart/>,
-//   },
-//   {
-//     path: '/login',
-//     element: <Login/>,
-//   },
-//   {
-//     path: '/registershop',
-//     element: <RegisterShop/>,
-//   },
-//   {
-//     path: '/cartbill',
-//     element: <CartBill/>,
-//   },
-// ]);
-
-
 function App() {
   
   return (

@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Login.css';
 import { Link } from 'react-router-dom';
-import axios from 'axios';  // Import Axios library
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
+        const user = {
+            username: username,
+            password: password,
+        };
         try {
-            const response = await axios.post('http://localhost:8000/accounts/login/', {
-                username: username,
-                password: password
-            });
-            alert('Login Successful');  // Display alert for successful login
-            // Redirect or navigate to the home page
+            const response = await axios.post('http://127.0.0.1:8000/login/', user);
+            alert(response.data.status);
+            console.log(response.data);
         } catch (error) {
-            console.error('Login failed:', error);
-            // alert('Login failed. Please check your username and password.');  // Display alert for failed login
-            alert(error);
+            console.error(error);
         }
     };
 
@@ -34,7 +33,6 @@ const LoginPage = () => {
                     <Link to="/registershop" className='loginlink'>New User? Signup</Link>
                 </div>
             </div>
-
         </>
     );
 };
