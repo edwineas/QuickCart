@@ -7,3 +7,5 @@ export { default as Help } from './help.svg';
 export { default as Profile } from './profile.svg';
 export { default as Logo } from './logo.svg';
 export { default as Thankimg } from './thankyou_img.png';
+export { default as Add } from './add.svg';
+export { default as Remove } from './remove.svg';

@@ -1,20 +1,21 @@
-import { Cart, ShopsGrid } from '../../components';
+import React, { useState } from 'react';
+import { Cart, ShopsGrid, Popup } from '../../components';
 import './Feed.css';
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from '../../images';
 
 const images = [
-  Carrot,
-  Cauliflower,
-  Onion,
-  Carrot,
-  Cauliflower,
-  Onion,
-  Carrot,
-  Cauliflower,
-  Onion,
-  Carrot,
-  Cauliflower,
-  Onion,
+  {src:Carrot, price:60},
+  {src:Cauliflower, price:45},
+  {src:Onion, price:45},
+  {src:Carrot, price:60},
+  {src:Cauliflower, price:45},
+  {src:Onion, price:45},
+  {src:Carrot, price:60},
+  {src:Cauliflower, price:45},
+  {src:Onion, price:45},
+  {src:Carrot, price:60},
+  {src:Cauliflower, price:45},
+  {src:Onion, price:45},
 ];
 
 const shops = [
@@ -33,12 +34,21 @@ const shops = [
   // Add more image objects here
 ];
 
-const handleClick = (image) => {
+ // State to store the selected image
+
+
+
+const handleClick = (shop) => {
   // Add your click handling logic here
 };
 
 
 function Feed() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const itemClick = (image) => {
+    setSelectedImage(image);
+    <Popup imageUrl={image.src} onClose={() => setSelectedImage(null)} /> // Update selected image on click
+  };
 
   return (
     <>
@@ -47,7 +57,7 @@ function Feed() {
           <div className='feed-h1'>What are you looking for?</div>
           <div className="carousel">
             {images.map((image, index) => (
-              <img key={index} src={image} alt="" className="carousel-item" onClick={() => handleClick(image)} />
+              <img key={index} src={image.src} alt="" className="carousel-item" onClick={() => itemClick(image.src)} />
             ))}
           </div>
         </div>
@@ -62,9 +72,9 @@ function Feed() {
         </div>
         <Cart />
       </div>
+      {selectedImage && <Popup imageUrl={selectedImage} onClose={() => setSelectedImage(null)} />} {/* Conditionally render Popup */}
     </>
-  )
-
+  );
 }
 
 export default Feed;
