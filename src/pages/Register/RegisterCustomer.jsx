@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RegisterCustomer.css';
 
 const RegisterCustomer = () => {
@@ -10,6 +11,8 @@ const RegisterCustomer = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -18,7 +21,7 @@ const RegisterCustomer = () => {
       return;
     }
 
-    fetch('http://localhost:8000/register/', {  // replace with your Django server's URL
+    fetch('http://localhost:8000/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,18 +33,22 @@ const RegisterCustomer = () => {
         email: email,
         first_name: firstName,
         last_name: lastName,
-        user_type: 'customer',  // assuming user_type is 'customer' for this form
-        is_active: true,  // assuming is_active is always true for this form
-        // add any other fields as necessary
+        user_type: 'customer',
+        is_active: true,
       }),
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        navigate('/login');
+      } else {
+        alert(data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    });
   };
 
   return (
@@ -55,7 +62,7 @@ const RegisterCustomer = () => {
         <input className="registerCustomer-input" type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
         <input className="registerCustomer-input" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
         <input className="registerCustomer-input" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
-        <button className="registerCustomer-button" type="submit">Confirm</button>
+        <button className="registerCustomer-button" type="submit">Register</button>
       </form>
     </div>
   );

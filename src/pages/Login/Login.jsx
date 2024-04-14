@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import bapi from '../../api';
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
 import './Login.css';
-import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
-    const handleLogin = async () => {
-        const user = {
-            username: username,
-            password: password,
-        };
+    const handleLogin = async (e) => {
+        setLoading(true);
+        e.preventDefault();
+
         try {
-            const response = await axios.post('http://127.0.0.1:8000/login/', user);
-            alert(response.data.status);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
+            const res = await bapi.post('/api/token/', { username, password });
+            localStorage.setItem(ACCESS_TOKEN, res.data.access);
+            localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+            navigate('/');
+        }
+        catch (error) {
+            alert(error);
+        }
+        finally {
+            setLoading(false);
         }
     };
 
