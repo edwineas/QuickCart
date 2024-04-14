@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bapi from '../../api'; // Importing bapi instance
 import './RegisterCustomer.css';
 
 const RegisterCustomer = () => {
@@ -13,7 +14,7 @@ const RegisterCustomer = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -21,34 +22,25 @@ const RegisterCustomer = () => {
       return;
     }
 
-    fetch('http://localhost:8000/register/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contact_number: phoneNumber,
+    try {
+      const response = await bapi.post('/register/customer/', {
         username: username,
         password: password,
-        email: email,
         first_name: firstName,
         last_name: lastName,
-        user_type: 'customer',
-        is_active: true,
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === 'success') {
+        email: email,
+        phone_number: phoneNumber,
+      });
+
+      if (response.data.status === 'success') {
         navigate('/login');
       } else {
-        alert(data.message);
+        alert(response.data.message);
       }
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Error:', error);
       alert('An error occurred. Please try again.');
-    });
+    }
   };
 
   return (
