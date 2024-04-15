@@ -1,0 +1,24 @@
+.outer-container {
+   margin-top: 50px;
+   margin-left: 20px;
+}
+
+.iRow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.shopImage img {
+    left: 200px;
+    height: 300px;
+    width: 400px;
+    
+}
+
+.shopDetails {
+    
+    font-size: larger;
+    line-height: 4;
+    position: relative;
+    margin-right: 190px;
+}
