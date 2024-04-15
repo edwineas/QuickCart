@@ -9,6 +9,11 @@
     justify-content: space-between; /* Center the container horizontally (optional) */
 }
 
+.item-name{
+    text-align: center;
+    font-size: 15px;
+    margin-right: 30px;
+}
 
 
 .feed-h1 {
@@ -31,7 +36,7 @@
 
 .carousel-item {
     display: block;
-    padding: 1px;
+    padding: 1px 1px 5px 1px;
     margin-right: 30px;
     cursor: pointer;
     object-fit: cover;
