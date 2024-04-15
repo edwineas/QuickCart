@@ -7,4 +7,5 @@ export { default as Thankyou } from './Thankyou/Thankyou';
 export { default as CartBill } from './Confirmation/CartBill';
 export { default as RegisterCustomer } from './Register/RegisterCustomer';
 export { default as NewStock } from './StockManagement/NewStock';
-export {default as Shopkeeper} from './Register/Shopkeeper';
+export { default as Shopkeeper} from './Register/Shopkeeper';
+export { default as Help } from './Help/Help';
