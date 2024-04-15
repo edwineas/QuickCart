@@ -3,19 +3,19 @@ import { Cart, ShopsGrid, Popup } from "../../components";
 import "./Feed.css";
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
 
-const images = [
-  { src: Carrot, name: "Carrot" },
-  { src: Cauliflower, name: "Cauliflower" },
-  { src: Onion, name: "Onion" },
-  { src: Carrot, name: "Carrot" },
-  { src: Cauliflower, name: "Cauliflower" },
-  { src: Onion, name: "Onion" },
-  { src: Carrot, name: "Carrot" },
-  { src: Cauliflower, name: "Cauliflower" },
-  { src: Onion, name: "Onion" },
-  { src: Carrot, name: "Carrot" },
-  { src: Cauliflower, name: "Cauliflower" },
-  { src: Onion, name: "Onion" },
+const products = [
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
 ];
 
 const shops = [
@@ -34,10 +34,10 @@ const shops = [
 ];
 
 function Feed() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const itemClick = (image) => {
-    setSelectedImage(image.src); // Update selected image on click
+  const itemClick = (product) => {
+    setSelectedProduct(product); // Update selected image on click
   };
 
   return (
@@ -47,16 +47,16 @@ function Feed() {
           <div className="feed-h1">What are you looking for?</div>
           <div className="carousel">
             
-              {images.map((image, index) => (
+              {products.map((product, index) => (
                 <div className="vegies">
                 <img
                   key={index}
-                  src={image.src}
-                  alt=""
+                  src={product.src}
+                  alt={product.name}
                   className="carousel-item"
-                  onClick={() => itemClick(image)}
+                  onClick={() => itemClick(product)}
                 />
-                <div className="item-name">{image.name}</div>
+                <div className="item-name">{product.name}</div>
                 </div>
               ))}
             
@@ -78,10 +78,11 @@ function Feed() {
         </div>
         <Cart />
       </div>
-      {selectedImage && (
+      {selectedProduct && (
         <Popup
-          imageUrl={selectedImage}
-          onClose={() => setSelectedImage(null)}
+          imageUrl={selectedProduct.src}
+          name={selectedProduct.name}
+          onClose={() => setSelectedProduct(null)}
         />
       )}{" "}
       {/* Conditionally render Popup */}
