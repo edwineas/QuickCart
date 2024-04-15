@@ -37,7 +37,7 @@ function Feed() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const itemClick = (image) => {
-    setSelectedImage(image.src); // Update selected image on click
+    setSelectedImage(image); // Update selected image on click
   };
 
   return (
@@ -52,7 +52,7 @@ function Feed() {
                 <img
                   key={index}
                   src={image.src}
-                  alt=""
+                  alt={image.name}
                   className="carousel-item"
                   onClick={() => itemClick(image)}
                 />
@@ -80,7 +80,8 @@ function Feed() {
       </div>
       {selectedImage && (
         <Popup
-          imageUrl={selectedImage}
+          imageUrl={selectedImage.src}
+          name={selectedImage.name}
           onClose={() => setSelectedImage(null)}
         />
       )}{" "}
