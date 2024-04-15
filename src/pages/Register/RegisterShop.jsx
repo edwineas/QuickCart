@@ -8,9 +8,10 @@ const RegisterShop = () => {
         phoneNumber: '',
         email: '',
         shopLocation: '',
-        shopType: '',
+        openTime: '',
+        closeTime: '',
         password: '',
-        license: null,
+        image: null,
     });
 
     const handleChange = (event) => {
@@ -70,13 +71,27 @@ const RegisterShop = () => {
                     <div className="row">
                         <div className="column">
                             <label className="form-label">
-                                Shop Type:
+                                Shop Opening Time:
                             </label>
-                            <input type="text" name="shopType" onChange={handleChange} className="form-input" />
+                            <input type="text" name="openTime" onChange={handleChange} className="form-input" />
                         </div>
                         <div className="column">
                             <label className="form-label">
-                                Password:
+                                Shop Closing Time:
+                            </label>
+                            <input type="text" name="closeTime" onChange={handleChange} className="form-input" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="column">
+                            <label className="form-label">
+                                Create new password:
+                            </label>
+                            <input type="password" name="password" onChange={handleChange} className="form-input" />
+                        </div>
+                        <div className="column">
+                            <label className="form-label">
+                                Confirm password:
                             </label>
                             <input type="password" name="password" onChange={handleChange} className="form-input" />
                         </div>
@@ -84,7 +99,7 @@ const RegisterShop = () => {
                     <div className="row">
                         <div className="column">
                             <label className="form-label-upload">
-                                Upload License Certificate:
+                                Upload image of shop:
                             </label>
                             <input type="file" onChange={handleFileChange} className="form-input" />
                         </div>
