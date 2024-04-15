@@ -4,18 +4,18 @@ import "./Feed.css";
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
 
 const images = [
-  { src: Carrot,name: "Carrot", price: 60 },
-  { src: Cauliflower,name: "Cauliflower", price: 45 },
-  { src: Onion,name: "Onion", price: 45 },
-  { src: Carrot,name: "Carrot", price: 60 },
-  { src: Cauliflower,name: "Cauliflower", price: 45 },
-  { src: Onion,name: "Onion", price: 45 },
-  { src: Carrot,name: "Carrot", price: 60 },
-  { src: Cauliflower,name: "Cauliflower", price: 45 },
-  { src: Onion,name: "Onion", price: 45 },
-  { src: Carrot,name: "Carrot", price: 60 },
-  { src: Cauliflower,name: "Cauliflower", price: 45 },
-  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot, name: "Carrot" },
+  { src: Cauliflower, name: "Cauliflower" },
+  { src: Onion, name: "Onion" },
+  { src: Carrot, name: "Carrot" },
+  { src: Cauliflower, name: "Cauliflower" },
+  { src: Onion, name: "Onion" },
+  { src: Carrot, name: "Carrot" },
+  { src: Cauliflower, name: "Cauliflower" },
+  { src: Onion, name: "Onion" },
+  { src: Carrot, name: "Carrot" },
+  { src: Cauliflower, name: "Cauliflower" },
+  { src: Onion, name: "Onion" },
 ];
 
 const shops = [
