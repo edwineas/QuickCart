@@ -9,3 +9,4 @@ export { default as RegisterCustomer } from './Register/RegisterCustomer';
 export { default as NewStock } from './StockManagement/NewStock';
 export { default as Shopkeeper} from './Register/Shopkeeper';
 export { default as Help } from './Help/Help';
+export { default as Order } from './Order/Order';
