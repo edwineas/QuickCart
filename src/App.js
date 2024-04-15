@@ -4,7 +4,7 @@ import './App.css';
 
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
-import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute  } from './components';
+import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, IndividualShops  } from './components';
 import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper} from './pages';
 
 function Logout() {
@@ -35,6 +35,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/registershop" element={<RegisterShop />} />
           <Route path="/registershopkeeper" element={<Shopkeeper />} />
+          <Route path="/individual-shop" element={<IndividualShops />} />
           <Route path="/cartbill" element={<CartBill />} />
           <Route path="/thankyou" element={<Thankyou />} />
           <Route path="/registercustomer" element={<RegisterCustomer />} />
