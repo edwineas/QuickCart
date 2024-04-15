@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
         </button>
         <button className='nav-btn'>
-          <Link to='/' className='nav-link'>
+          <Link to='/help' className='nav-link'>
             <div className="navcontents">
               <img src={Help} id="help" alt='' />
               Help
