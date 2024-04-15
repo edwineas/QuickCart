@@ -4,7 +4,7 @@ import './RegisterShop.css';
 
 const RegisterShop = () => {
     const location = useLocation();
-    // const shopkeeperId = location.state.shopkeeper_id;
+    const shopkeeperId = location.state.shopkeeper_id;
     
 
     const [form, setForm] = useState({
@@ -24,12 +24,29 @@ const RegisterShop = () => {
     };
 
     const handleFileChange = (event) => {
-        setForm({ ...form, license: event.target.files[0] });
+        setForm({ ...form, image: event.target.files[0] });
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission logic here
+        const formData = new FormData();
+        formData.append('shopkeeper', shopkeeperId);
+        formData.append('name', form.shopName);
+        formData.append('address', form.shopLocation);
+        formData.append('phone_number', form.phoneNumber);
+        formData.append('opening_time', form.openTime);
+        formData.append('closing_time', form.closeTime);
+        formData.append('image', form.image);
+
+        fetch('http://localhost:8000/shops/create/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     };
 
     return (
@@ -64,13 +81,13 @@ const RegisterShop = () => {
                             <label className="form-label">
                                 Shop Opening Time:
                             </label>
-                            <input type="text" name="openTime" onChange={handleChange} className="form-input" />
+                            <input type="time" name="openTime" onChange={handleChange} className="form-input" />
                         </div>
                         <div className="column">
                             <label className="form-label">
                                 Shop Closing Time:
                             </label>
-                            <input type="text" name="closeTime" onChange={handleChange} className="form-input" />
+                            <input type="time" name="closeTime" onChange={handleChange} className="form-input" />
                         </div>
                     </div>
                     {/* <div className="row">
