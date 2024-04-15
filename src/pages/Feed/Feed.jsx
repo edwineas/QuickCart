@@ -4,18 +4,18 @@ import "./Feed.css";
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
 
 const images = [
-  { src: Carrot, price: 60 },
-  { src: Cauliflower, price: 45 },
-  { src: Onion, price: 45 },
-  { src: Carrot, price: 60 },
-  { src: Cauliflower, price: 45 },
-  { src: Onion, price: 45 },
-  { src: Carrot, price: 60 },
-  { src: Cauliflower, price: 45 },
-  { src: Onion, price: 45 },
-  { src: Carrot, price: 60 },
-  { src: Cauliflower, price: 45 },
-  { src: Onion, price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
+  { src: Carrot,name: "Carrot", price: 60 },
+  { src: Cauliflower,name: "Cauliflower", price: 45 },
+  { src: Onion,name: "Onion", price: 45 },
 ];
 
 const shops = [
@@ -48,6 +48,7 @@ function Feed() {
           <div className="carousel">
             
               {images.map((image, index) => (
+                <div className="vegies">
                 <img
                   key={index}
                   src={image.src}
@@ -55,6 +56,8 @@ function Feed() {
                   className="carousel-item"
                   onClick={() => itemClick(image)}
                 />
+                <div className="item-name">{image.name}</div>
+                </div>
               ))}
             
           </div>
