@@ -1,0 +1,41 @@
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 300px;
+    font-family: Arial, sans-serif;;
+    height: 100vh;
+  }
+  
+  .order h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .order table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order table, .order th, .order td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .order th {
+    background-color: #3e5bc3;
+    color: white;
+  }
+  
+  .order button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    border: #3e5bc3 solid 2px;
+    color: #3e5bc3;
+    font-weight: 900px;
+    cursor: pointer;
+  }
+  
