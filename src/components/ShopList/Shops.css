@@ -1,57 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 .shops-container {
-    display: flex; /* Arrange shops horizontally */
-    flex-wrap: wrap-reverse; /* Wrap shops in reverse order to fill the row first */
-    margin: 0 auto;
-    padding: 10px;
-    width: 80%;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .shop-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Space between shop name and button */
-    width: calc(33% - 20px); /* Adjust width based on number of shops per row */
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    cursor: pointer; /* Indicate clickable shop item  */
-    width: 100%;
-  }
-  
-  .shop-item button {
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-family: Arial;
-    color: #1BC049;
-    font-size: 18px;
-    background: white;
-    padding: 9px 38.5px 9px 38.5px;
-    border: solid #1BC049 2px;
-    text-decoration: none;
-  }
-  
-  .shop-item button:hover {
-    color: #435BDA;
-    border: solid #435BDA 2px;
-  }
-  
- #shops{
-     height: 40px;
-     
- }
+  display: flex;
+  /* Arrange shops horizontally */
+  flex-wrap: wrap-reverse;
+  /* Wrap shops in reverse order to fill the row first */
+  margin: 0 auto;
+  padding: 10px;
+  width: 80%;
+  font-family: 'Poppins', sans-serif;
+}
 
- #foot {
+.shop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Space between shop name and button */
+  width: calc(33% - 20px);
+  /* Adjust width based on number of shops per row */
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  /* Indicate clickable shop item  */
+  width: 100%;
+}
+
+.shop-item button {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #1BC049;
+  font-size: 18px;
+  background: white;
+  padding: 9px 38.5px 9px 38.5px;
+  border: solid #1BC049 2px;
+  text-decoration: none;
+}
+
+.shop-item button:hover {
+  color: #435BDA;
+  border: solid #435BDA 2px;
+}
+
+#shops {
+  height: 50px;
+  width: 60px;
+  object-fit: cover;
+}
+
+#foot {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-   /* Adjust text color as needed */
+  /* Adjust text color as needed */
   text-align: center;
-  padding: 0px; /* Adjust padding as needed */
+  padding: 0px;
+  /* Adjust padding as needed */
 }
-
