@@ -1,0 +1,60 @@
+.postorder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.postorder h1 {
+  color: #333;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.shop-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.shop-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.total {
+  text-align: right;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.status {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5187d9;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: large;
+}
+
+.status:hover {
+  background-color: #203658;
+}
