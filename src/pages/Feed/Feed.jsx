@@ -42,7 +42,7 @@ function Feed() {
               {products.map((product, index) => (
                 <div className="vegies">
                 <img
-                  key={index}
+                  key={product.id}
                   src={product.src}
                   alt={product.name}
                   className="carousel-item"
@@ -75,6 +75,7 @@ function Feed() {
           imageUrl={selectedProduct.src}
           name={selectedProduct.name}
           onClose={() => setSelectedProduct(null)}
+          id={selectedProduct.id}
         />
       )}{" "}
       {/* Conditionally render Popup */}

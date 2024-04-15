@@ -16,7 +16,8 @@ export const useProducts = () => {
         if (Array.isArray(data)) {
           const products = data.map(product => ({
             src: product.image,
-            name: product.name
+            name: product.name,
+            id: product.id
           }));
           setProducts(products);
         } else {
