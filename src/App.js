@@ -4,7 +4,7 @@ import './App.css';
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, IndividualShops  } from './components';
-import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper,Help,Order} from './pages';
+import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper,Help,Order,PostOrder} from './pages';
 
 function Logout() {
   localStorage.clear();
@@ -41,6 +41,7 @@ function App() {
           <Route path="/newstock" element={<NewStock />} />
           <Route path="/help" element={<Help />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/postorder" element={<PostOrder />} />
         </Routes>
         <Footer />
       </Router>
