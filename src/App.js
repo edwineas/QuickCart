@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import { Navbar, Cart, Footer, Popup,ProtectedRoute } from './components';
@@ -24,7 +23,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
+          {/* <Route path="/" element={<ProtectedRoute><Feed /></ProtectedRoute>} /> */}
+          <Route path="/" element={<Feed />} />
           <Route path="/searchpage" element={<SearchPage />} />
           <Route path='/popup' element={<Popup/>} />
           <Route path="/cart-page" element={<CartPage />} />
