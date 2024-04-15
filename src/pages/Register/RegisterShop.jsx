@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './RegisterShop.css';
 
 const RegisterShop = () => {
+    const location = useLocation();
+    // const shopkeeperId = location.state.shopkeeper_id;
+    
+
     const [form, setForm] = useState({
         shopName: '',
         ownerName: '',

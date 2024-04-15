@@ -31,9 +31,9 @@ const Shopkeeper = () => {
         email: email,
         phone_number: phoneNumber,
       });
-
+    
       if (response.data.status === 'success') {
-        navigate('/registershop');
+        navigate('/registershop', { state: { shopkeeper_id: response.data.shopkeeper_id } });
       } else {
         alert(response.data.message);
       }
