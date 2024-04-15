@@ -4,8 +4,8 @@ import './App.css';
 
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
-import { Navbar, Cart, Footer, Popup,ProtectedRoute } from './components';
-import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock} from './pages';
+import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute  } from './components';
+import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper} from './pages';
 
 function Logout() {
   localStorage.clear();
@@ -31,8 +31,10 @@ function App() {
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/user-select" element={<UserSelector />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/registershop" element={<RegisterShop />} />
+          <Route path="/register-shopkeeper" element={<Shopkeeper />} />
           <Route path="/cartbill" element={<CartBill />} />
           <Route path="/thankyou" element={<Thankyou />} />
           <Route path="/registercustomer" element={<RegisterCustomer />} />

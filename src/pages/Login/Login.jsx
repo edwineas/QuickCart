@@ -37,7 +37,7 @@ const LoginPage = () => {
                     <input className='logininput' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className='loginbutton' onClick={handleLogin}>Login</button>
                     <a className='loginlink' href="/forgot-password">Forgot Password</a>
-                    <Link to="/registershop" className='loginlink'>New User? Signup</Link>
+                    <Link to="/user-select" className='loginlink'>New User? Signup</Link>
                 </div>
             </div>
         </>

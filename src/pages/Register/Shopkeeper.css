@@ -1,0 +1,40 @@
+.Shopkeeper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  
+  .Shopkeeper-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .Shopkeeper-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .Shopkeeper-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1b50b3;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .Shopkeeper-buttonn:hover {
+    background-color: #0c2452;
+  }

@@ -25,7 +25,8 @@
     margin-right: 152px;
     display: flex;
     overflow-x: auto;
-    padding-bottom: 10px;
+    white-space: nowrap; /* Prevent line breaks */
+    -webkit-overflow-scrolling: touch; 
 }
 
 .carousel-item {
@@ -38,7 +39,9 @@
     object-fit: cover;
 }
 
-
+.carousel::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
 
 .grid-card-list {
     margin-left: 152px;
