@@ -23,7 +23,7 @@ const Shopkeeper = () => {
     }
 
     try {
-      const response = await bapi.post('/register/Shopkeeper/', {
+      const response = await bapi.post('/register/shopkeeper/', {
         username: username,
         password: password,
         first_name: firstName,

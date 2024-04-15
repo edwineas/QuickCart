@@ -13,7 +13,7 @@ const UserSelector = () => {
 
   const handleShopkeeperClick = () => {
     setShopkeeper(true);
-    navigate('/registershop'); // Navigate to '/registershop' path
+    navigate('/registershopkeeper'); // Navigate to '/registershop' path
   };
 
   return (
