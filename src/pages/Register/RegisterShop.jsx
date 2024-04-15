@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './RegisterShop.css';
 
 const RegisterShop = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const shopkeeperId = location.state.shopkeeper_id;
     
 
@@ -29,6 +30,7 @@ const RegisterShop = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         const formData = new FormData();
         formData.append('shopkeeper', shopkeeperId);
         formData.append('name', form.shopName);
@@ -43,7 +45,13 @@ const RegisterShop = () => {
             body: formData
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (data.status === 'success') {
+                navigate('/login');
+            } else {
+                console.log(data);
+            }
+        })
         .catch((error) => {
             console.error('Error:', error);
         });
@@ -90,20 +98,6 @@ const RegisterShop = () => {
                             <input type="time" name="closeTime" onChange={handleChange} className="form-input" />
                         </div>
                     </div>
-                    {/* <div className="row">
-                        <div className="column">
-                            <label className="form-label">
-                                Create new password:
-                            </label>
-                            <input type="password" name="password" onChange={handleChange} className="form-input" />
-                        </div>
-                        <div className="column">
-                            <label className="form-label">
-                                Confirm password:
-                            </label>
-                            <input type="password" name="password" onChange={handleChange} className="form-input" />
-                        </div>
-                    </div> */}
                     <div className="row">
                         <div className="column">
                             <label className="form-label-upload">
