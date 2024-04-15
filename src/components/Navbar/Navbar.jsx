@@ -8,11 +8,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="nav-brand">
-        <Link to='/'>
+      <Link to='/'>
           <img src={Logo} id="logo" alt='' />
-        </Link>
-      </div>
+      </Link>
       <div className="navbar-right">
         <button className='nav-btn'>
           <Link to='/searchpage' className='nav-link'>
@@ -32,12 +30,11 @@ const Navbar = () => {
         <button className='nav-btn'>
           <Link to='/login' className='nav-link'>
             <div className="navcontents">
-              <Avatar alt="" src={Profile} id="profile" />
+              <Avatar src="/broken-image.jpg" id='profile' />
             </div>
           </Link>
         </button>
       </div>
-
     </nav>
   );
 };
