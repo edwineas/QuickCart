@@ -2,6 +2,7 @@ import React from 'react';
 import "./Navbar.css";
 import { Search, Help, Profile, Logo } from '../../images';
 import { Link } from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
 
 const Navbar = () => {
 
@@ -31,7 +32,7 @@ const Navbar = () => {
         <button className='nav-btn'>
           <Link to='/login' className='nav-link'>
             <div className="navcontents">
-              <img src={Profile} id="profile" alt='' />
+              <Avatar alt="" src={Profile} id="profile" />
             </div>
           </Link>
         </button>

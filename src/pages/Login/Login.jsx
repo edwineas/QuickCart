@@ -16,8 +16,11 @@ const LoginPage = () => {
 
         try {
             const res = await bapi.post('/api/token/', { username, password });
+            console.log(res.data);
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+            localStorage.setItem('role', res.data.role);
+            localStorage.setItem('userid', res.data.user_id);
             navigate('/');
         }
         catch (error) {
