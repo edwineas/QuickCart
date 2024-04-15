@@ -46,29 +46,15 @@ const RegisterShop = () => {
                         </div>
                         <div className="column">
                             <label className="form-label">
-                                Owner's Name:
-                            </label>
-                            <input type="text" name="ownerName" onChange={handleChange} className="form-input" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="column">
-                            <label className="form-label">
                                 Phone Number:
                             </label>
                             <input type="tel" name="phoneNumber" onChange={handleChange} className="form-input" />
-                        </div>
-                        <div className="column">
-                            <label className="form-label">
-                                Email Address:
-                            </label>
-                            <input type="email" name="email" onChange={handleChange} className="form-input" />
                         </div>
                     </div>
                     <div className="row">
                         <div className="column-shop-location">
                             <label className="form-label">
-                                Shop Location:
+                                Shop Address:
                             </label>
                             <input type="text" name="shopLocation" onChange={handleChange} className="form-input-shop-location" />
                         </div>
@@ -87,7 +73,7 @@ const RegisterShop = () => {
                             <input type="text" name="closeTime" onChange={handleChange} className="form-input" />
                         </div>
                     </div>
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="column">
                             <label className="form-label">
                                 Create new password:
@@ -100,7 +86,7 @@ const RegisterShop = () => {
                             </label>
                             <input type="password" name="password" onChange={handleChange} className="form-input" />
                         </div>
-                    </div>
+                    </div> */}
                     <div className="row">
                         <div className="column">
                             <label className="form-label-upload">
