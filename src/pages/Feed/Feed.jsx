@@ -2,21 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Cart, ShopsGrid, Popup } from "../../components";
 import "./Feed.css";
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
+import { useProducts } from "../../components/data";
 
-// const products = [
-//   { src: Carrot,name: "Carrot", price: 60 },
-//   { src: Cauliflower,name: "Cauliflower", price: 45 },
-//   { src: Onion,name: "Onion", price: 45 },
-//   { src: Carrot,name: "Carrot", price: 60 },
-//   { src: Cauliflower,name: "Cauliflower", price: 45 },
-//   { src: Onion,name: "Onion", price: 45 },
-//   { src: Carrot,name: "Carrot", price: 60 },
-//   { src: Cauliflower,name: "Cauliflower", price: 45 },
-//   { src: Onion,name: "Onion", price: 45 },
-//   { src: Carrot,name: "Carrot", price: 60 },
-//   { src: Cauliflower,name: "Cauliflower", price: 45 },
-//   { src: Onion,name: "Onion", price: 45 },
-// ];
 
 const shops = [
   { src: Img, name: "Elite Supermarket 1", rating: 4.5 },
@@ -35,30 +22,8 @@ const shops = [
 
 function Feed() {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:8000/shops/products/')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (Array.isArray(data)) {
-          const products = data.map(product => ({
-            src: product.image,
-            name: product.name
-          }));
-          setProducts(products);
-        } else {
-          console.error('Data is not an array:', data);
-        }
-      })
-      .catch(error => console.error('Error:', error));
-  }, []);
+  const products = useProducts();
   
   const itemClick = (product) => {
     setSelectedProduct(product); // Update selected image on click
