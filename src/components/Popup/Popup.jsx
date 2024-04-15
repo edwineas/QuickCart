@@ -27,7 +27,7 @@ const Popup = ({ imageUrl, onClose, price, name }) => {
           {/* <div className='vegetable-price'>
           <p>Price: &#8377;{(price * quantity).toFixed(2)}</p>
           </div> */}
-          <button className="add-btn" onClick={suBmit}>Add to Cart ({quantity} items)</button>
+          <center><button className="add-btn" onClick={suBmit}>Add to Cart ({quantity} items)</button></center>
         </div>
       </div>
     </div>
