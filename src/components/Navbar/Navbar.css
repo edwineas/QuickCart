@@ -19,7 +19,7 @@
 #logo,#search,#help,#profile{
     position: relative;
     padding-right: 5px;
-    top: 4px;
+    top: -1px;
 }
 
 .nav-btn{

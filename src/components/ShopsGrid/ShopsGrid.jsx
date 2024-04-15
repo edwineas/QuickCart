@@ -5,9 +5,9 @@ const ShopsGrid = ({ shopSrc, shopName, shopRating }) => {
   return (
     <div className="grid-card">
       <img src={shopSrc} alt={shopName} />
-      <p className='shopeName'>{shopName}</p>
-      <div className='rating'>
-      <img src={Rating} alt={`Rating: ${shopRating}` } id="star" />
+      <div className='shopeName'><p>{shopName}</p></div>
+      <div className='shop-rating'>
+      <img src={Rating} alt={`Rating: ${shopRating}` } id="starLogo" />
       {shopRating}
       </div>
     </div>

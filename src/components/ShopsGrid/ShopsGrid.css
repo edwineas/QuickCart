@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-
+.shop-name{
+  position: relative;
+  padding-top: 15px;
+}
 .grid-card {
   background-color: #f5f5f5;
   margin-right: 10px;
@@ -15,14 +18,15 @@
   /* Adjust image width if needed */
 }
 
-#star {
+#starLogo {
   position: relative;
   top: 5px;
   width: 20px;
   margin-right: 5px;
+  margin-bottom: 12px;
 }
 
-.rating {
+.shop-rating {
   padding-bottom: 5px;
   margin-left: 15px;
 }
