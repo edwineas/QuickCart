@@ -14,3 +14,4 @@ export { default as PostOrder } from './PostOrder/PostOrder';
 export { default as OrderView } from './OrderView/OrderView';
 export { default as CartList } from './CartList/CartList';
 export { default as Inventory } from './Inventory/Inventory';
+export { default as OrderDetails } from './OrderDetails/OrderDetails';

@@ -5,7 +5,8 @@ import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import { CartProvider } from './components/CartContext';
 import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, IndividualShops, CartItems } from './components';
-import { Feed, Login, SearchPage, Thankyou, CartBill, RegisterCustomer, NewStock, Shopkeeper, Help, Order, PostOrder, OrderView, CartList, Inventory } from './pages';
+
+import { Feed, Login, SearchPage, Thankyou, CartBill, RegisterCustomer, NewStock, Shopkeeper, Help, Order, PostOrder, OrderView, CartList ,OrderDetails, Inventory} from './pages';
 
 function Logout() {
   localStorage.clear();
@@ -47,6 +48,7 @@ function App() {
             <Route path="/cartitems" element={<CartItems />} />
             <Route path="/cartlist" element={<CartList />} />
             <Route path="/inventory" element={<Inventory />} />
+            <Route path="/orderdetails" element={<OrderDetails />} />
           </Routes>
           <Footer />
         </Router>
