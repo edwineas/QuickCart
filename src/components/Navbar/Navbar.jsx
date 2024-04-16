@@ -56,6 +56,9 @@ const Navbar = () => {
       return (
         <div className="dropdown-menu">
           <ul>
+            <Link to="/inventory" className="menulink">
+              <li>Inventory</li>
+            </Link>
             <Link to="/order-view" className="menulink">
               <li>Past Orders</li>
             </Link>
