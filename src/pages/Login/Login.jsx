@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import bapi from '../../api';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
 import './Login.css';
@@ -8,6 +8,7 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
@@ -16,11 +17,11 @@ const LoginPage = () => {
 
         try {
             const res = await bapi.post('/api/token/', { username, password });
-            console.log(res.data);
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
             localStorage.setItem('role', res.data.role);
             localStorage.setItem('userid', res.data.user_id);
+            localStorage.setItem('isLoggedIn', 'true');
             navigate('/');
         }
         catch (error) {
