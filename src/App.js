@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-do
 import './App.css';
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
-import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, IndividualShops  } from './components';
-import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper,Help,Order,PostOrder,OrderView} from './pages';
+import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, IndividualShops, CartItems  } from './components';
+import { Feed, Login, SearchPage, Thankyou, CartBill,RegisterCustomer,NewStock, Shopkeeper,Help,Order,PostOrder,OrderView, CartList} from './pages';
 
 function Logout() {
   localStorage.clear();
@@ -33,7 +33,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/registershop" element={<RegisterShop />} />
           <Route path="/registershopkeeper" element={<Shopkeeper />} />
-          <Route path="/individual-shop" element={<IndividualShops />} />
+          <Route path="/individual-shop" element={<indi />} />
           <Route path="/cartbill" element={<CartBill />} />
           <Route path="/thankyou" element={<Thankyou />} />
           <Route path="/registercustomer" element={<RegisterCustomer />} />
@@ -42,6 +42,8 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/postorder" element={<PostOrder />} />
           <Route path="/order-view" element={<OrderView />} />
+          <Route path="/cartitems" element={<CartItems />} />
+          <Route path="/cartlist" element={<CartList />} />
         </Routes>
         <Footer />
       </Router>

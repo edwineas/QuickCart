@@ -12,3 +12,4 @@ export { default as Help } from './Help/Help';
 export { default as Order } from './Order/Order';
 export { default as PostOrder } from './PostOrder/PostOrder';
 export { default as OrderView } from './OrderView/OrderView';
+export { default as CartList } from './CartList/CartList';

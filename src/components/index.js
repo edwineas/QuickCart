@@ -6,4 +6,5 @@ export { default as ShopsGrid } from './ShopsGrid/ShopsGrid';
 export { default as Popup } from './Popup/Popup';
 export { default as ProtectedRoute } from './ProtectedRoute';
 export { default as UserSelector } from './UserSelector/UserSelector';
-export { default as IndividualShops } from './IndividualShops/indi';
+export { default as indi } from './IndividualShops/indi';
+export { default as CartItems } from './CartItems/CartItems';
