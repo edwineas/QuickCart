@@ -1,0 +1,28 @@
+.order-details {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.order-details h2, .order-details h3 {
+    color: #333;
+}
+
+.order-details p {
+    margin-bottom: 10px;
+}
+
+.order-details table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.order-details th, .order-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.order-details tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
