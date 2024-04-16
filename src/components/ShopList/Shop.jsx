@@ -1,33 +1,42 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../CartContext'; // Make sure to adjust the path to match your file structure
 import './Shops.css'; // Import CSS file if needed
 
-const Shop = ({ product }) => {
-  const [count, setCount] = useState(0);
+function Shop({ product }) {
+  const { addToCart } = useContext(CartContext);
+  const [productState, setProductState] = useState({ quantity: 1, isSelectingQuantity: false });
 
-  const handleAdd = () => {
-    setCount(count + 1);
+  const handleAddToCart = () => {
+    addToCart({ ...product, quantity: productState.quantity });
+    setProductState({ quantity: 1, isSelectingQuantity: false });
   };
 
-  const handleMinus = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
+  const handleQuantityChange = (change) => {
+    setProductState(prevState => ({ ...prevState, quantity: prevState.quantity + change }));
   };
+
+  const handleShowQuantitySelector = () => {
+    setProductState(prevState => ({ ...prevState, isSelectingQuantity: true }));
+  };
+
+  // ...
 
   return (
-    <div className="shop-item">
-      <img src={product.src} alt={product.name} id='shops'/><p>{product.name}</p>
-      {count === 0 ? (
-        <button type="button" onClick={handleAdd}>Add</button>
+    <div className="shop-item" key={product.id}>
+      <img src={product.src} alt={product.name} id="shops" />
+      <div className="product-name">{product.name}</div>
+      {productState.isSelectingQuantity ? (
+        <>
+          <button onClick={() => handleQuantityChange(-1)}>-</button>
+          <span>{productState.quantity}</span>
+          <button onClick={() => handleQuantityChange(1)}>+</button>
+          <button onClick={handleAddToCart}>Add to Cart</button>
+        </>
       ) : (
-        <div>
-          <button type="button" className='decbutton' onClick={handleMinus}>-</button>
-          <span>{count}</span>
-          <button type="button" className='incbutton' onClick={handleAdd}>+</button>
-        </div>
+        <button onClick={handleShowQuantitySelector}>Add to Cart</button>
       )}
     </div>
   );
-};
+}
 
 export default Shop;

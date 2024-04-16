@@ -9,7 +9,7 @@ const Cart = () => {
   const { cart } = useContext(CartContext);
 
   const navigateToCart = () => {
-    navigate('/cartitems');
+    navigate('/cartlist');
   }
 
   return (
