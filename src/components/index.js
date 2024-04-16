@@ -9,3 +9,4 @@ export { default as UserSelector } from './UserSelector/UserSelector';
 export { default as Indi } from './IndividualShops/Indi';
 export { default as CartItems } from './CartItems/CartItems';
 export { default as Table } from './Table/Table';
+export { default as EditPopup } from './EditPopup/EditPopup';
