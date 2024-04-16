@@ -23,9 +23,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          {/* <Route path="/" element={<ProtectedRoute><Feed /></ProtectedRoute>} /> */}
-          <Route path="/" element={<Feed />} />
-          <Route path="/searchpage" element={<SearchPage />} />
+          <Route path="/" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
+          <Route path="/searchpage" element={<ProtectedRoute><SearchPage /></ProtectedRoute>} />
           <Route path='/popup' element={<Popup/>} />
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/cart" element={<Cart />} />

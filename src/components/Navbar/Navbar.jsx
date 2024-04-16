@@ -10,6 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [avatarLetter, setAvatarLetter] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
   const userId = localStorage.getItem('userid'); // replace with your actual userId
 
   useEffect(() => {
@@ -22,13 +23,61 @@ const Navbar = () => {
       window.location.href = '/login';
       return;
     }
-    try {
-      navigate('/');
-      const response = await axios.get(`http://localhost:8000/users/name/${userId}`);
-      const name = response.data.name;
-      setAvatarLetter(name[0].toUpperCase());
-    } catch (error) {
-      console.error('Failed to fetch username:', error);
+    else {
+      try {
+        setDropdownVisible(!isDropdownVisible);
+        const response = await axios.get(`http://localhost:8000/users/name/${userId}`);
+        const name = response.data.name;
+        setAvatarLetter(name[0].toUpperCase());
+      } catch (error) {
+        console.error('Failed to fetch username:', error);
+      }
+    }
+  };
+  const DropdownMenu = () => {
+    const role = localStorage.getItem('role');
+    console.log('role', role)
+
+
+    if (role === 'customer') {
+      return (
+        <div className="dropdown-menu">
+          <ul>
+            <Link to="/order" className="menulink">
+              <li>Orders</li>
+            </Link>
+            <Link to="/logout" className="menulink">
+              <li onClick={setAvatarLetter()}>Logout</li>
+            </Link>
+          </ul>
+        </div>
+      );
+    } else if (role === 'shopkeeper') {
+      return (
+        <div className="dropdown-menu">
+          <ul>
+            <Link to="/order-view" className="menulink">
+              <li>Past Orders</li>
+            </Link>
+            <Link to="/logout" className="menulink">
+              <li onClick={setAvatarLetter()}>Logout</li>
+            </Link>
+          </ul>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className="dropdown-menu">
+          <ul>
+            <Link to="/logout" className="menulink">
+              <li onClick={setAvatarLetter()}>
+                Logout
+              </li>
+            </Link>
+          </ul>
+        </div>
+      );
     }
   };
   return (
@@ -54,11 +103,12 @@ const Navbar = () => {
         </button>
         <button className='nav-btn'>
           {/* <Link to={'/login'} className='nav-link'> */}
-            <div className="navcontents">
-              <Avatar id='profile' onClick={handleAvatarClick}>
-                {avatarLetter ? avatarLetter : <PersonIcon />}
-              </Avatar>
-            </div>
+          <div className="navcontents">
+            <Avatar id='profile' onClick={handleAvatarClick}>
+              {avatarLetter ? avatarLetter : <PersonIcon />}
+            </Avatar>
+            {isDropdownVisible && <DropdownMenu />}
+          </div>
           {/* </Link> */}
         </button>
       </div>
