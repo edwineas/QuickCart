@@ -1,18 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Cart, ShopsGrid, Popup } from "../../components";
 import "./Feed.css";
-import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
-import { useProducts,useShops } from "../../components/data";
+import { useProducts, useShops } from "../../components/data";
 
 function Feed() {
   const [selectedProduct, setSelectedProduct] = useState(null);
-
   const products = useProducts();
   const shops = useShops();
-  // console.log(shops)
-  
+
   const itemClick = (product) => {
-    setSelectedProduct(product); // Update selected image on click
+    setSelectedProduct(product);
+  };
+
+  const navigate = useNavigate();
+
+  const shopClick = (shop) => {
+    navigate('/individual-shop', {
+      state: {
+        image: shop.image,
+        name: shop.name,
+        address: shop.address,
+        rating: shop.rating,
+        openTime: shop.opening_time,
+        closeTime: shop.closing_time
+      }
+    });
   };
 
   return (
@@ -21,20 +34,17 @@ function Feed() {
         <div className="carousel-container">
           <div className="feed-h1">What are you looking for?</div>
           <div className="carousel">
-            
-              {products.map((product, index) => (
-                <div className="vegies">
+            {products.map((product) => (
+              <div className="vegies" key={product.id}>
                 <img
-                  key={product.id}
                   src={product.src}
                   alt={product.name}
                   className="carousel-item"
                   onClick={() => itemClick(product)}
                 />
                 <div className="item-name">{product.name}</div>
-                </div>
-              ))}
-            
+              </div>
+            ))}
           </div>
         </div>
         <br />
@@ -42,12 +52,13 @@ function Feed() {
           <div className="feed-h1">Top shops near</div>
           <div className="grid-card-list">
             {shops.map((shop, index) => (
-              <ShopsGrid
-                key={index}
-                shopSrc={shop.image}
-                shopName={shop.name}
-                shopRating={shop.rating}
-              />
+              <div key={index} onClick={() => shopClick(shop)}>
+                <ShopsGrid
+                  shopSrc={shop.image}
+                  shopName={shop.name}
+                  shopRating={shop.rating}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -60,8 +71,7 @@ function Feed() {
           onClose={() => setSelectedProduct(null)}
           id={selectedProduct.id}
         />
-      )}{" "}
-      {/* Conditionally render Popup */}
+      )}
     </>
   );
 }
