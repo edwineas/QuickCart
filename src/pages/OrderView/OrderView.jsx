@@ -1,5 +1,6 @@
 import React from 'react';
 import './OrderView.css'; // Assuming you have a CSS file named OrderView.css in the same directory
+import { Table } from '../../components';
 
 const OrderView = () => {
     const dummyData = [
@@ -8,33 +9,20 @@ const OrderView = () => {
     ];
 
     return (
-        <div className="order-view">
-            <h1>OrderView</h1>
-            <table className="order-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Order ID</th>
-                        <th>User NAME</th>
-                        <th>Total Cost</th>
-                        <th>Order Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dummyData.map((data, index) => (
-                        <tr key={index}>
-                            <td>{data.date}</td>
-                            <td>{data.orderId}</td>
-                            <td>{data.username}</td>
-                            <td>{data.totalCost}</td>
-                            <td>
-                                <button className="details-button" onClick={() => alert(data.orderDetails)}>View Details</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <>
+            <div className="order-view">
+                <h1>OrderView</h1>
+                <Table
+                    titles={['Date', 'Order ID', 'User NAME', 'Total Cost']}
+                    keys={['date', 'orderId', 'username', 'totalCost']}
+                    data={dummyData}
+                    showAction
+                    actionTitle="Order Details"
+                    buttonLabel="View Details"
+                    onButtonClick={(row) => alert(row.orderDetails)}
+                />
+            </div>
+        </>
     );
 };
 
