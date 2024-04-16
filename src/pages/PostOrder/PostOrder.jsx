@@ -1,7 +1,11 @@
 import React from 'react';
 import './PostOrder.css'; // Import your custom CSS file to make the page attractive
-
+import { useNavigate } from 'react-router-dom';
 const PostOrder = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/thankyou')
+  }
   // Sample data
   const orders = [
     { 
@@ -31,7 +35,7 @@ const PostOrder = () => {
             </div>
           ))}
           <p className="total">Total: {shop.total}</p>
-          <button className="status">{shop.status}</button>
+          <button className="status" onClick={handleClick}>{shop.status}</button>
         </div>
       ))}
     </div>

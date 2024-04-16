@@ -3,8 +3,13 @@ import './CartBill.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useNavigate } from 'react-router-dom';
 
 const CartBill = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/postorder')
+    }
     return (
         <div className="bill-container">
             <div className="cart-head">
@@ -34,10 +39,6 @@ const CartBill = () => {
                     <p className="bill-item-total-price">₹799.00</p>
                 </div>
                 <div className="billitem">
-                    <p className="bill-delivery-fee">Delivery Fee | 12.9 kms</p>
-                    <p className="bill-delivery-fee-price">₹131.00</p>
-                </div>
-                <div className="billitem">
                     <p className="bill-taxes-charges">Taxes and Charges i</p>
                     <p className="bill-taxes-charges-price">₹2.0</p>
                 </div>
@@ -55,7 +56,7 @@ const CartBill = () => {
                 </div>
 
             </div>
-            <button className="continue-button">Continue</button>
+            <button className="continue-button" onClick={handleClick}>Continue</button>
         </div>
     );
 }

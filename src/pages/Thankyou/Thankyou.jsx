@@ -1,8 +1,13 @@
 import React from 'react';
 import './Thankyou.css';
 import { Thankimg } from '../../images';
+import { useNavigate } from 'react-router-dom';
 
 const Thankyou = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/order')
+  }
   return (
     <div className="thankyou-container">
       <h1 className="thankyou-heading">Thank you for your purchase!</h1>
@@ -14,7 +19,7 @@ const Thankyou = () => {
             <p className="order-detail"><span className="order-detail-label">Name:</span> Sumesh P P</p>
             <p className="order-detail"><span className="order-detail-label">Phone number:</span> 8569235569</p>
             <p className="order-detail"><span className="order-detail-label">Email:</span> sumesh23@gmail.com</p>
-            <button className="order-details-button">View order details</button>
+            <button className="order-details-button" onClick={handleClick}>View order details</button>
         </div>
         <div className="thankyou-right-section">
           <img src={Thankimg} alt="Thank You" className="thankyou-image" />

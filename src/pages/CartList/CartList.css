@@ -4,3 +4,19 @@
     flex-direction: column;
     align-items: center;
 }
+
+.bttn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sbtn{
+    width: fit-content;
+    padding: 10px;
+    background-color: #435BDA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
