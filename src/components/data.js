@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 //List of products
 export const useProducts = () => {
@@ -53,4 +54,16 @@ export const useShops = () => {
   }, []);
 
   return shops;
+};
+
+//Get the inventory of a shop
+export const getInventory = async () => {
+  const shopId = localStorage.getItem('shopId'); // Get the shopId from the local storage
+  try {
+    const response = await axios.get(`http://localhost:8000/shops/inventory/${shopId}/`);
+    const inventoryList = response.data;
+    return inventoryList;
+  } catch (error) {
+    console.error('Failed to fetch inventory:', error);
+  }
 };
