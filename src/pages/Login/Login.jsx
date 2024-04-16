@@ -14,7 +14,7 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         setLoading(true);
         e.preventDefault();
-
+    
         try {
             const res = await bapi.post('/api/token/', { username, password });
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
@@ -22,6 +22,10 @@ const LoginPage = () => {
             localStorage.setItem('role', res.data.role);
             localStorage.setItem('userid', res.data.user_id);
             localStorage.setItem('isLoggedIn', 'true');
+    
+            if (res.data.role === 'shopkeeper') {
+                localStorage.setItem('shopId', res.data.shop_id);
+            }
             navigate('/');
         }
         catch (error) {

@@ -30,3 +30,13 @@ const Table = ({ titles = [], keys = [], data = [], onButtonClick, showAction = 
 };
 
 export default Table;
+
+//How to use Table component
+// Pass the following props to the Table component:
+// titles: An array of strings representing the column titles.
+// keys: An array of strings representing the keys to access the data in each row.
+// data: An array of objects representing the data to be displayed in the table.
+// onButtonClick: A function that is called when the action button is clicked. It receives the row data as an argument.
+// showAction: A boolean value indicating whether to show the action column.
+// actionTitle: A string representing the title of the action column.
+// buttonLabel: A string representing the label of the action button.
