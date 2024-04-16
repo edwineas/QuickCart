@@ -61,3 +61,6 @@
   padding: 0px;
   /* Adjust padding as needed */
 }
+.decbutton .incbutton{
+  padding: 9px 15px;
+}

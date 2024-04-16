@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../CartContext';
 import './Popup.css'; // Import your CSS file
 import { Add, Remove } from '../../images/index'; // Assuming these are image imports
 
 const Popup = ({ imageUrl, onClose, name, id }) => {
+  const { addToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (delta) => {
@@ -10,9 +12,10 @@ const Popup = ({ imageUrl, onClose, name, id }) => {
   };
 
   const handleSubmit = () => {
-    // Implement logic to add item to cart using the current quantity
-    // You can access quantity, name, id, etc. from here
-    console.log('Adding item to cart:', { quantity, name, id }); // Example logging
+    addToCart({ id, name, quantity });
+    // // Implement logic to add item to cart using the current quantity
+    // // You can access quantity, name, id, etc. from here
+    // console.log('Adding item to cart:', { quantity, name, id }); // Example logging
     onClose(true);
   };
 

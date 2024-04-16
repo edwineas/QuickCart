@@ -4,23 +4,6 @@ import "./Feed.css";
 import { Carrot, Cauliflower, Onion, sampleImage as Img } from "../../images";
 import { useProducts,useShops } from "../../components/data";
 
-
-// const shops = [
-//   { src: Img, name: "Elite Supermarket 1", rating: 4.5 },
-//   { src: Img, name: "Elite Supermarket 2", rating: 3.8 },
-//   { src: Img, name: "Elite Supermarket 3", rating: 4.2 },
-//   { src: Img, name: "Elite Supermarket 1", rating: 4.5 },
-//   { src: Img, name: "Elite Supermarket 2", rating: 3.8 },
-//   { src: Img, name: "Elite Supermarket 3", rating: 4.2 },
-//   { src: Img, name: "Elite Supermarket 1", rating: 4.5 },
-//   { src: Img, name: "Elite Supermarket 2", rating: 3.8 },
-//   { src: Img, name: "Elite Supermarket 3", rating: 4.2 },
-//   { src: Img, name: "Elite Supermarket 1", rating: 4.5 },
-//   { src: Img, name: "Elite Supermarket 2", rating: 3.8 },
-//   { src: Img, name: "Elite Supermarket 3", rating: 4.2 },
-// ];
-
-
 function Feed() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
