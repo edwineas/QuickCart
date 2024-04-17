@@ -11,7 +11,7 @@
   margin-right: 10px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: left;
 }
 
@@ -19,6 +19,7 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .grid-card img {
@@ -27,15 +28,13 @@
 }
 
 #starLogo {
-  position: relative;
-  top: 5px;
   width: 20px;
   margin-right: 5px;
-  margin-bottom: 12px;
 }
 
 .shop-rating {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 15px;
 }

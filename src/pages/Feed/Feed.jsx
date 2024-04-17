@@ -47,7 +47,7 @@ function Feed() {
             ))}
           </div>
         </div>
-        <br />
+        <br/>
         <div className="gridcardlist">
           <div className="feed-h1">Top shops near</div>
           <div className="grid-card-list">

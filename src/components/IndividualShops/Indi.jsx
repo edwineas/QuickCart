@@ -29,7 +29,7 @@ export default function Indi() {
                     <div className='shopAddress'>{address}</div>
                     <div className='shopContact'><img src={str} alt="rating" id="starLogo" />{rating}</div>
                     <div className='shopContact'><span>Contact: </span> {contact}</div>
-                    <div className='shopContact'><span>Open time: </span> {openTime}</div>
+                    <div className='shopContact'><span>Opening time: </span> {openTime}</div>
                     <div className='shopContact'><span>Closing time: </span>{closeTime}</div>
                 </div>
                 <div className='shopImage'>
