@@ -1,34 +1,60 @@
 .outer-container {
-   margin-top: 50px;
-   margin-left: 20px;
-}
+    width: 40%;
+    margin:50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f8f9fa;
+ }
+ 
+ .iRow {
+     display: flex;
+     justify-content: space-evenly;
+     padding: 20px;
+     border: 1px solid #dee2e6;
+     border-radius: 10px;
+     background-color: #fff;
+ }
+ 
+ .shopImage img {
+     left: 200px;
+     height: 200px;
+     width: 100%;
+     border-radius: 10px;
+ }
+ .shopImage {
+    width: 50%;
+ }
 
-.iRow {
-    display: flex;
-    justify-content: space-evenly;
-}
+ .shopContact > span {
+     font-weight:bold;
+ }
+ 
+ .shopDetails {
+    width: 50%;
+     font-size: larger;
+     line-height:1.8;
+     margin-right: 190px;
+     flex-direction: column;
+     justify-content: space-evenly;
+ }
+ 
+ #starLogo{
+     position: relative;
+     top: 15px;
+ }
+ 
+ .shopName{
+     font-weight: bolder;
 
-.shopImage img {
-    left: 200px;
-    height: 300px;
-    width: 400px;
-    
-}
+     font-size: larger;
+     color: #333;
+ }
 
-.shopDetails {
-    font-size: larger;
-    line-height: 4;
-    position: relative;
-    margin-right: 190px;
-}
-
-#starLogo{
-    position: relative;
-    top: 15px;
-}
-
-.shopName{
-    font-weight: bolder;
-    text-decoration: underline;
-    font-size: larger;
-}
+ 
+ .shopDescription {
+     margin-top: 20px;
+     font-size: medium;
+     color: #6c757d;
+ }
+ 
