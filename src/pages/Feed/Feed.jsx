@@ -52,11 +52,12 @@ function Feed() {
           <div className="feed-h1">Top shops near</div>
           <div className="grid-card-list">
             {shops.map((shop, index) => (
-              <div key={index} onClick={() => shopClick(shop)}>
+              <div key={index} onClick={() => shopClick(shop)} className="grid-cart" >
                 <ShopsGrid
                   shopSrc={shop.image}
                   shopName={shop.name}
                   shopRating={shop.rating}
+                  shopAddress={shop.address} // pass the address here
                 />
               </div>
             ))}
