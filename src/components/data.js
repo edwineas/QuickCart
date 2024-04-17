@@ -67,3 +67,14 @@ export const getInventory = async () => {
     console.error('Failed to fetch inventory:', error);
   }
 };
+
+// Get the inventory of a shop by shopId
+export const shopInventory = async (shopId) => {
+  try {
+    const response = await axios.get(`http://localhost:8000/shops/inventory/${shopId}/`);
+    const inventoryList = response.data;
+    return inventoryList;
+  } catch (error) {
+    console.error('Failed to fetch inventory:', error);
+  }
+};
