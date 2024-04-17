@@ -1,5 +1,5 @@
 .outer-container {
-    width: 60%;
+    width: 40%;
     margin:50px auto;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -19,8 +19,11 @@
  .shopImage img {
      left: 200px;
      height: 200px;
-     width: 90%;
+     width: 100%;
      border-radius: 10px;
+ }
+ .shopImage {
+    width: 50%;
  }
 
  .shopContact > span {
@@ -28,9 +31,12 @@
  }
  
  .shopDetails {
+    width: 50%;
      font-size: larger;
-     line-height: 1.5;
+     line-height:1.8;
      margin-right: 190px;
+     flex-direction: column;
+     justify-content: space-evenly;
  }
  
  #starLogo{

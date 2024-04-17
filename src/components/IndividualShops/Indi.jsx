@@ -12,14 +12,13 @@ const data = [
         rating: 4.5, 
         openTime: '10:00 AM', 
         closeTime: '08:00 PM',
-        contact: '123-456-7890',
-        description: 'Fresh Choice is a leading grocery store providing fresh and quality products.'
+        contact: '123-456-7890'
     }
 ];
 
 export default function Indi() {
     const location = useLocation();
-    const { image, name, address, rating, openTime, closeTime, contact, email, description } = location.state;
+    const { image, name, address, rating, openTime, closeTime, contact,} = location.state;
     return (
         <>
         
@@ -28,10 +27,10 @@ export default function Indi() {
             <div className='iRow'>
                 <div className='shopDetails'>
                     <div className='shopAddress'>{address}</div>
-                    <div className='shopDescription'>{description}</div>
                     <div className='shopContact'><img src={str} alt="rating" id="starLogo" />{rating}</div>
-                    <div className='shopContact'><span>Open from: </span> {openTime} to {closeTime}</div>
                     <div className='shopContact'><span>Contact: </span> {contact}</div>
+                    <div className='shopContact'><span>Open time: </span> {openTime}</div>
+                    <div className='shopContact'><span>Closing time: </span>{closeTime}</div>
                 </div>
                 <div className='shopImage'>
                     <img src={image} alt="image" className='iImg'/>
