@@ -25,6 +25,10 @@ const LoginPage = () => {
 
             if (res.data.role === 'shopkeeper') {
                 localStorage.setItem('shopId', res.data.shop_id);
+                localStorage.setItem('shopkeeperId', res.data.shopkeeper_id);
+            }
+            else if(res.data.role === 'customer'){
+                localStorage.setItem('customerId', res.data.customer_id);
             }
             navigate('/');
         } catch (error) {
