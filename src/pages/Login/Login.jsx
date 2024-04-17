@@ -8,6 +8,7 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
@@ -27,16 +28,15 @@ const LoginPage = () => {
             }
             navigate('/');
         } catch (error) {
-            console.log(error);
             if (error.response.status === 401) {
                 // Incorrect password
-                alert("Incorrect Password");
+                setErrorMessage('Incorrect Password');
             } else if (error.response.status === 404) {
                 // Username doesn't exist
-                alert("Username doesn't exist");
+                setErrorMessage('Username doesn\'t exist');
             } else {
                 // Other errors
-                alert("An error occurred. Please try again later.");
+                setErrorMessage('An error occurred. Please try again later.');
             }
         } finally {
             setLoading(false);
@@ -46,11 +46,13 @@ const LoginPage = () => {
     return (
         <>
             <div className='login-main'>
+                
                 <div className="login-container">
                     <h1 className='loginhead'>Login</h1>
                     <input className='logininput' type="text" placeholder="User Name" value={username} onChange={(e) => setUsername(e.target.value)} />
                     <input className='logininput' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className='loginbutton' onClick={handleLogin}>Login</button>
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
                     <a className='loginlink' href="/forgot-password">Forgot Password</a>
                     <Link to="/user-select" className='loginlink'>New User? Signup</Link>
                 </div>
