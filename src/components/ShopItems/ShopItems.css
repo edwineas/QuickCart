@@ -1,0 +1,27 @@
+/* .body-container {
+  display: flex; 
+  justify-content: space-between;
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+.cart-container {
+  float: none; 
+  margin-left: auto; 
+}
+
+#cart {
+  display: block; 
+} */
+
+.cart-container {
+  
+    position: relative; 
+    margin-bottom: 210px; 
+    margin-right: 20px;
+    align-self: flex-end; 
+  }
+  
+  #cart2 {
+    display: block; 
+  }

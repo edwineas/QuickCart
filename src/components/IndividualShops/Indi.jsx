@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { star_rating as str, sampleImage } from '../../images';
 import './Indi.css';
-import SearchPage from '../../pages/SearchPage/SearchPage';
+import ShopItems from '../ShopItems/ShopItems';
 
 const data = [
     { 
@@ -38,7 +38,7 @@ export default function Indi() {
             </div>
         </div>
         <div className="shops-container">
-        <SearchPage />
+        <ShopItems />
         </div>
         </>
     );
