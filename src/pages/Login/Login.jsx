@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bapi from '../../api';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
 import './Login.css';
@@ -8,13 +8,12 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         setLoading(true);
         e.preventDefault();
-    
+
         try {
             const res = await bapi.post('/api/token/', { username, password });
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
@@ -22,16 +21,24 @@ const LoginPage = () => {
             localStorage.setItem('role', res.data.role);
             localStorage.setItem('userid', res.data.user_id);
             localStorage.setItem('isLoggedIn', 'true');
-    
+
             if (res.data.role === 'shopkeeper') {
                 localStorage.setItem('shopId', res.data.shop_id);
             }
             navigate('/');
-        }
-        catch (error) {
-            alert(error);
-        }
-        finally {
+        } catch (error) {
+            console.log(error);
+            if (error.response.status === 401) {
+                // Incorrect password
+                alert("Incorrect Password");
+            } else if (error.response.status === 404) {
+                // Username doesn't exist
+                alert("Username doesn't exist");
+            } else {
+                // Other errors
+                alert("An error occurred. Please try again later.");
+            }
+        } finally {
             setLoading(false);
         }
     };
