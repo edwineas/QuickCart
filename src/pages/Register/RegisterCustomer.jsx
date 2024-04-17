@@ -49,8 +49,8 @@ const RegisterCustomer = () => {
       <form className="registerCustomer-form" onSubmit={handleSubmit}>
         <input className="registerCustomer-input" type="text" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} />
         <input className="registerCustomer-input" type="text" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} />
-        <input className="registerCustomer-input" type="text" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-        <input className="registerCustomer-input" type="text" placeholder="Phone Number" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
+        <input className="registerCustomer-input" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+        <input className="registerCustomer-input" type="number" placeholder="Phone Number" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
         <input className="registerCustomer-input" type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
         <input className="registerCustomer-input" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
         <input className="registerCustomer-input" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
