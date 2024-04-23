@@ -46,13 +46,15 @@ export default function Indi() {
     <thead>
       <tr>
         <th>Product Name</th>
-        <th>Price (Rs. per kg)</th>
+        <th>Quantity</th>
+        <th>Price (Rs. per kg or unit)</th>
       </tr>
     </thead>
     <tbody>
       {sInventory.map((item) => (
         <tr key={item.id}>
           <td>{item.product_name}</td>
+          <td>{item.quantity}</td>
           <td>{item.price}</td>
         </tr>
       ))}
