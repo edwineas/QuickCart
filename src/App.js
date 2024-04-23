@@ -7,6 +7,10 @@ import { CartProvider } from './components/CartContext';
 import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, Indi, CartItems } from './components';
 import { Feed, Login, SearchPage, Thankyou, CartBill, RegisterCustomer, NewStock, Shopkeeper, Help, Order, PostOrder, OrderView, CartList ,OrderDetails, Inventory,ShopkeeperDashboard} from './pages';
 
+function Logout() {
+  localStorage.clear();
+  return <Navigate to="/login" />;
+}
 
 function RegisterAndLogout() {
   localStorage.clear();
