@@ -1,45 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { star_rating as str, sampleImage } from '../../images';
+import { star_rating as str } from '../../images';
 import './Indi.css';
-import ShopItems from '../ShopItems/ShopItems';
-
-const data = [
-    { 
-        image: sampleImage, 
-        name: 'Fresh Choice', 
-        address: 'Sample Address XYZ', 
-        rating: 4.5, 
-        openTime: '10:00 AM', 
-        closeTime: '08:00 PM',
-        contact: '123-456-7890'
-    }
-];
+import Grocery from './Grocery';
+import { shopInventory } from "../../components/data";
 
 export default function Indi() {
     const location = useLocation();
-    const { image, name, address, rating, openTime, closeTime, contact,} = location.state;
+    const [sInventory, setSInventory] = useState([]);
+    const { image, name, sid, address, rating, openTime, closeTime, contact } = location.state || {};
+    const shopId = sid;
+
+    useEffect(() => {
+        if (!shopId) return; // Check if shopId is defined
+        const fetchInventory = async () => {
+            try {
+                const inventory = await shopInventory(shopId);
+                setSInventory(inventory);
+            } catch (error) {
+                console.error('Error fetching shop inventory:', error);
+            }
+        };
+        fetchInventory();
+    }, [shopId, location.state]);
+    console.log(sInventory);
     return (
         <>
-        
-        <div className='outer-container'>
-            <div className='shopName'><h1>{name}</h1></div>
-            <div className='iRow'>
-                <div className='shopDetails'>
-                    <div className='shopAddress'>{address}</div>
-                    <div className='shopContact'><img src={str} alt="rating" id="starLogo" />{rating}</div>
-                    <div className='shopContact'><span>Contact: </span> {contact}</div>
-                    <div className='shopContact'><span>Opening time: </span> {openTime}</div>
-                    <div className='shopContact'><span>Closing time: </span>{closeTime}</div>
-                </div>
-                <div className='shopImage'>
-                    <img src={image} alt="image" className='iImg'/>
+            <div className='outer-container'>
+                <div className='shopName'><h1>{name}</h1></div>
+                <div className='itemsRow'>
+                    <div className='shopDetails'>
+                        <div className='shopAddress'>{address}</div>
+                        <div className='shopContact'><img src={str} alt="rating" id="starLogo" />{rating}</div>
+                        <div className='shopContact'><span>Contact: </span> {contact}</div>
+                        <div className='shopContact'><span>Opening time: </span> {openTime}</div>
+                        <div className='shopContact'><span>Closing time: </span>{closeTime}</div>
+                    </div>
+                    <div className='shopImage'>
+                        <img src={image} alt="image" className='iImg'/>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div className="shops-container">
-        <ShopItems />
-        </div>
+            <div className="shops-container">
+  <table className="inventory-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price (Rs. per kg)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sInventory.map((item) => (
+        <tr key={item.id}>
+          <td>{item.product_name}</td>
+          <td>{item.price}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
         </>
     );
 };

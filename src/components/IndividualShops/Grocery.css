@@ -1,0 +1,15 @@
+.gRow{
+    margin: 15px;
+    display: block;
+    display: flex;
+    justify-content: center; /* Horizontally center the contents */
+    align-items: center;
+
+}
+
+.iRow{
+    display: block;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}

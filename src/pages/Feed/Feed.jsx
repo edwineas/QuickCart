@@ -20,6 +20,7 @@ function Feed() {
       state: {
         image: shop.image,
         name: shop.name,
+        sid: shop.id,
         address: shop.address,
         rating: shop.rating,
         openTime: shop.opening_time,
