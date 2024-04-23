@@ -34,7 +34,7 @@ const CartBill = () => {
             </div>
             <div className="bill-details-container">
                 <h2 className="bill-details-title">Bill details</h2>
-                <div className="billitem">
+                {/* <div className="billitem">
                     <p className="bill-item-total">Item Total</p>
                     <p className="bill-item-total-price">₹799.00</p>
                 </div>
@@ -49,7 +49,7 @@ const CartBill = () => {
                 <div className="billitem">
                     <p className="bill-discount">Discount</p>
                     <p className="bill-discount-price">₹4000.00</p>
-                </div>
+                </div> */}
                 <div className="billitem">
                     <p className="bill-final-total">Total</p>
                     <p className="bill-final-total-price">₹7,400.00</p>

@@ -25,25 +25,27 @@ const LoginPage = () => {
 
             if (res.data.role === 'shopkeeper') {
                 localStorage.setItem('shopId', res.data.shop_id);
-                localStorage.setItem('shopkeeperId', res.data.shopkeeper_id);
-            }
-            else if(res.data.role === 'customer'){
-                localStorage.setItem('customerId', res.data.customer_id);
             }
             navigate('/');
         } catch (error) {
             if (error.response.status === 401) {
                 // Incorrect password
-                setErrorMessage('Incorrect Password');
+                setErrorMessage("Incorrect Password");
             } else if (error.response.status === 404) {
                 // Username doesn't exist
-                setErrorMessage('Username doesn\'t exist');
+                setErrorMessage("Username doesn't exist");
             } else {
                 // Other errors
-                setErrorMessage('An error occurred. Please try again later.');
+                setErrorMessage("An error occurred. Please try again.");
             }
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleLogin(e);
         }
     };
 
@@ -54,9 +56,9 @@ const LoginPage = () => {
                 <div className="login-container">
                     <h1 className='loginhead'>Login</h1>
                     <input className='logininput' type="text" placeholder="User Name" value={username} onChange={(e) => setUsername(e.target.value)} />
-                    <input className='logininput' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <button className='loginbutton' onClick={handleLogin}>Login</button>
+                    <input className='logininput' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={handleKeyDown} />
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
+                    <button className='loginbutton' onClick={handleLogin}>Login</button>
                     <a className='loginlink' href="/forgot-password">Forgot Password</a>
                     <Link to="/user-select" className='loginlink'>New User? Signup</Link>
                 </div>
