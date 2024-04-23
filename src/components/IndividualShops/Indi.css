@@ -56,3 +56,24 @@
      color: #6c757d;
  }
  
+ .inventory-table {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Collapse borders */
+  }
+  
+  .inventory-table th, .inventory-table td {
+    border: 1px solid #ddd; /* Add border */
+    padding: 8px; /* Add padding */
+    text-align: center; /* Align text to the center */
+  }
+  
+  .inventory-table th {
+    background-color: #505bd7; /* Add background color to table heading */
+    color: white; /* Set text color to white */
+  }
+  
+  .inventory-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Add background color to alternating rows */
+  }
+  
