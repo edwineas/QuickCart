@@ -68,3 +68,36 @@
     height: 375px;
 }
 
+/* The media query for the mobile view is as follows: */
+
+@media screen and (max-width: 440px) {
+
+    .carousel {
+        background-color: blueviolet;
+        margin-left: 30px;
+        margin-right: 0px;
+
+    }
+
+    .vegies img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .carousel-item {
+        margin-right: 15px;
+    }
+
+    .grid-card-list {
+        margin-left: 30px;
+        margin-right: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust as needed */
+        gap: 20px; /* Adjust gap between cards */
+        cursor: pointer;
+    }
+
+
+}
