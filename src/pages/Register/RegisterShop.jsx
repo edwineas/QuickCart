@@ -40,7 +40,7 @@ const RegisterShop = () => {
         formData.append('closing_time', form.closeTime);
         formData.append('image', form.image);
 
-        fetch('http://localhost:8000/shops/create/', {
+        fetch(`${process.env.REACT_APP_DJANGO_URL}/shops/create/`, {
             method: 'POST',
             body: formData
         })

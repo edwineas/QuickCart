@@ -6,7 +6,7 @@ export const useProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/shops/products/')
+    fetch(`${process.env.REACT_APP_DJANGO_URL}/shops/products/`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -36,7 +36,7 @@ export const useShops = () => {
   const [shops, setShops] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/shops/list/')
+    fetch(`${process.env.REACT_APP_DJANGO_URL}/shops/list/`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -60,7 +60,7 @@ export const useShops = () => {
 export const getInventory = async () => {
   const shopId = localStorage.getItem('shopId'); // Get the shopId from the local storage
   try {
-    const response = await axios.get(`http://localhost:8000/shops/inventory/${shopId}/`);
+    const response = await axios.get(`${process.env.REACT_APP_DJANGO_URL}/shops/inventory/${shopId}/`);
     const inventoryList = response.data;
     return inventoryList;
   } catch (error) {
@@ -71,7 +71,7 @@ export const getInventory = async () => {
 // Get the inventory of a shop by shopId
 export const shopInventory = async (shopId) => {
   try {
-    const response = await axios.get(`http://localhost:8000/shops/inventory/${shopId}/`);
+    const response = await axios.get(`${process.env.REACT_APP_DJANGO_URL}/shops/inventory/${shopId}/`);
     const inventoryList = response.data;
     return inventoryList;
   } catch (error) {

@@ -26,7 +26,7 @@ const Navbar = () => {
     else {
       try {
         setDropdownVisible(!isDropdownVisible);
-        const response = await axios.get(`http://localhost:8000/users/name/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_DJANGO_URL}/users/name/${userId}`);
         const name = response.data.name;
         setAvatarLetter(name[0].toUpperCase());
       } catch (error) {

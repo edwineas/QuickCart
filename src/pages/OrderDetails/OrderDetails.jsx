@@ -30,7 +30,7 @@ const OrderDetails = () => {
     useEffect(() => {
         const fetchCustomer = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/users/customer/${customer_id}/`);
+                const response = await fetch(`${process.env.REACT_APP_DJANGO_URL}/users/customer/${customer_id}/`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -47,7 +47,7 @@ const OrderDetails = () => {
     useEffect(() => {
         const fetchOrderProducts = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/orders/products/${order_shop_id}/`);
+                const response = await fetch(`${process.env.REACT_APP_DJANGO_URL}/orders/products/${order_shop_id}/`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

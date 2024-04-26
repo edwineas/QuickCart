@@ -10,7 +10,7 @@ const OrderView = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('http://localhost:8000/orders/shop/13/');
+                const response = await fetch(`${process.env.REACT_APP_DJANGO_URL}/orders/shop/13/`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

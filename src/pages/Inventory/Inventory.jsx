@@ -27,7 +27,7 @@ const Inventory = () => {
 
     const handleSave = (updatedProduct) => {
         console.log(updatedProduct);
-        axios.put(`http://localhost:8000/shops/inventupdate/${updatedProduct.id}/`, updatedProduct)
+        axios.put(`${process.env.REACT_APP_DJANGO_URL}/shops/inventupdate/${updatedProduct.id}/`, updatedProduct)
             .then(response => {
                 // Update the local state with the updated product data
                 setInventoryList(inventoryList.map(product =>
