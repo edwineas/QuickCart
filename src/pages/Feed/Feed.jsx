@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Cart, ShopsGrid, Popup } from "../../components";
+import { Cart, ShopsGrid, Popup, LoadingScreen } from "../../components";
 import "./Feed.css";
 import { useProducts, useShops } from "../../components/data";
 
 function Feed() {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
   const products = useProducts();
   const shops = useShops();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (products.length === 0 || shops.length === 0) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [products, shops]);
 
   const itemClick = (product) => {
     setSelectedProduct(product);
   };
-
-  const navigate = useNavigate();
 
   const shopClick = (shop) => {
     navigate('/individual-shop', {
@@ -31,6 +39,7 @@ function Feed() {
 
   return (
     <>
+      {loading && <LoadingScreen />}
       <div className="feed-container">
         <div className="carousel-container">
           <div className="feed-h1">What are you looking for?</div>
@@ -48,7 +57,7 @@ function Feed() {
             ))}
           </div>
         </div>
-        <br/>
+        <br />
         <div className="gridcardlist">
           <div className="feed-h1">Top shops near</div>
           <div className="grid-card-list">

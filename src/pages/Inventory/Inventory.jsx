@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getInventory } from "../../components/data";
-import { Table } from '../../components';
+import { Table ,LoadingScreen} from '../../components';
 import './Inventory.css';
 import Edit from '@material-ui/icons/Edit';
 import { EditPopup } from '../../components';
@@ -11,11 +11,15 @@ import axios from 'axios';
 const Inventory = () => {
     const [inventoryList, setInventoryList] = useState([]);
     const [editProduct, setEditProduct] = useState(null);
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         const fetchInventory = async () => {
+            setLoading(true);
             const inventoryy = await getInventory();
             setInventoryList(inventoryy);
+            setLoading(false);
         };
 
         fetchInventory();
@@ -43,6 +47,7 @@ const Inventory = () => {
     };
 
     return (
+        loading ? <LoadingScreen /> :
         <div className='Inventorydiv'>
             <h1 className='InventH1'>Inventory</h1>
             <Table

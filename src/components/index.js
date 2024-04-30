@@ -12,3 +12,4 @@ export { default as Table } from './Table/Table';
 export { default as EditPopup } from './EditPopup/EditPopup';
 export { default as ShopItems} from './ShopItems/ShopItems';
 export { default as GeoLocation } from './GeoLocation';
+export { default as LoadingScreen } from './LoadingScreen/LoadingScreen';

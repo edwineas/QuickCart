@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import bapi from '../../api';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
 import './Login.css';
+import { LoadingScreen } from '../../components';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -51,8 +52,9 @@ const LoginPage = () => {
 
     return (
         <>
+            {loading && <LoadingScreen />}
             <div className='login-main'>
-                
+
                 <div className="login-container">
                     <h1 className='loginhead'>Login</h1>
                     <input className='logininput' type="text" placeholder="User Name" value={username} onChange={(e) => setUsername(e.target.value)} />
