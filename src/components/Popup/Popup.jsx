@@ -12,10 +12,7 @@ const Popup = ({ imageUrl, onClose, name, id }) => {
   };
 
   const handleSubmit = () => {
-    addToCart({ id, name, quantity });
-    // // Implement logic to add item to cart using the current quantity
-    // // You can access quantity, name, id, etc. from here
-    // console.log('Adding item to cart:', { quantity, name, id }); // Example logging
+    addToCart({ id, name }, quantity);
     onClose(true);
   };
 
