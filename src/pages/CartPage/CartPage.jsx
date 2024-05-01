@@ -2,13 +2,15 @@ import React from "react";
 import Priority from '../../components/PrioritySelector/Priority';
 import CheckoutItem from "../../components/CheckOutItem/CheckoutItem";
 import './CartPage.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const CartPage = () => {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/cartbill')
     }
+    const location = useLocation();
+    const cart = location.state.cart;
     return (
     <div>
       

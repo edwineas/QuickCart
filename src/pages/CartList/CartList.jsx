@@ -7,10 +7,10 @@ import { CartContext } from '../../components/CartContext';
 function CartList() {
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
+    
     const handleClick = () => {
-        navigate('/cart-page')
+        navigate('/cart-page', { state: { cart } });
     }
-
 
     return (
         <>
