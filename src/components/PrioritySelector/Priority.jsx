@@ -1,20 +1,22 @@
-import React from "react";
-import "./Priority.css"; // Import your CSS file
+import React, { useState } from "react";
+import "./Priority.css";
 
 const Priority = () => {
+  const [selectedPriority, setSelectedPriority] = useState("Distance");
+
+  const handlePriorityChange = (priority) => {
+    setSelectedPriority(priority);
+  };
+
   return (
     <div className="priority-container">
       <div className="preference-section box">
         What do you prefer?
         <div className="button-group">
-          <button className="sButton">Distance</button>
-          <button className="sButton">Availability</button>
+          <button className={selectedPriority === "Distance" ? "sButton active" : "sButton"} onClick={() => handlePriorityChange("Distance")}>Distance</button>
+          <button className={selectedPriority === "Availability" ? "sButton active" : "sButton"} onClick={() => handlePriorityChange("Availability")}>Availability</button>
+          <button className={selectedPriority === "Price" ? "sButton active" : "sButton"} onClick={() => handlePriorityChange("Price")}>Price</button>
         </div>
-      </div>
-      <div className="variation-section box">
-        <button className="sButton">&lt;&lt;</button>
-        <span className="Text">Variation 1</span>
-        <button className="sButton">&gt;&gt;</button>
       </div>
     </div>
   );

@@ -5,21 +5,28 @@ body{
 }
 .sButton{
   display: inline-flex;
-  background-color: #435BDA;
+  background-color: white;
   margin: 0 10px;
-  color: white;
+  color: #435BDA;
   padding: 10 0px;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
   padding: 7px 6px;
+  border: 1px solid #435BDA;
 }
+
+.sButton.active {
+  background-color: #435BDA; /* Change to your preferred color */
+  color: #FFFFFF; /* Change to your preferred color */
+}
+
 .priority-container {
     display: flex;
     margin: auto;
     margin-top: 50px;
     width: 94.5%;
-  }
+}
 
 .box {
     display: flex;
@@ -28,14 +35,10 @@ body{
     border-radius: 10px;
 }  
 
-  .priority-container div {
+.priority-container div {
     margin-right: 10px; /* Optional: Add spacing between the words */
-  }
+}
 
-  .preference-section{
+.preference-section{
     padding: 10px;
-  }
-
-  .variation-section{
-    padding: 10px;
-  }
+}
