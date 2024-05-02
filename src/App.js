@@ -4,7 +4,7 @@ import './App.css';
 import CartPage from './pages/CartPage/CartPage';
 import RegisterShop from './pages/Register/RegisterShop';
 import { CartProvider } from './components/CartContext';
-import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, Indi, CartItems, GeoLocation } from './components';
+import { Navbar, Cart, Footer, Popup, UserSelector, ProtectedRoute, Indi, CartItems } from './components';
 import { Feed, Login, SearchPage, Thankyou, CartBill, RegisterCustomer, NewStock, Shopkeeper, Help, Order, PostOrder, OrderView, CartList ,OrderDetails, Inventory,ShopkeeperDashboard} from './pages';
 
 function Logout() {
@@ -49,7 +49,6 @@ function App() {
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/orderdetails" element={<OrderDetails />} />
             <Route path="/shopkeeperdashboard" element={<ShopkeeperDashboard />} />
-            <Route path="/geolocation" element={<GeoLocation />} />
           </Routes>
           <Footer />
         </Router>
