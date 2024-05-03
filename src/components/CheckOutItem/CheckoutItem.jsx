@@ -15,6 +15,7 @@ const CheckoutItem = ({ shop }) => {
         <div key={index} className='item-row'>
           <div>{index + 1} </div>
           <div>{product.product}</div>
+          <div>{product.quantity}</div>
           <div>{product.price}</div>
         </div>
       ))}

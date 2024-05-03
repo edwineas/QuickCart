@@ -9,15 +9,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 const CartPage = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/cartbill')
+        navigate('/cartbill', { state: { mappedShops: mappedShops } });
     }
     const location = useLocation();
     const cart = location.state.cart;
 
-    const shops = [
-        { name: "Elite Supermarket", distance: 5, availability: 10, price: 90 },
-        { name: "Super Market", distance: 3, availability: 8, price: 76 },
-    ];
 
     const [selectedPriority, setSelectedPriority] = useState("Distance");
     const [mappedShops, setMappedShops] = useState([]);
@@ -28,25 +24,6 @@ const CartPage = () => {
         setSelectedPriority(priority);
     };
 
-    // useEffect(() => {
-    //     let sortedShops = [...shops];
-    //     if (selectedPriority === "Distance") {
-    //         sortedShops.sort((a, b) => a.distance - b.distance);
-    //     } else if (selectedPriority === "Availability") {
-    //         sortedShops.sort((a, b) => b.availability - a.availability);
-    //     } else if (selectedPriority === "Price") {
-    //         sortedShops.sort((a, b) => a.price - b.price);
-    //     }
-
-    //     let mapped = sortedShops.map(shop => {
-    //         let items = cart.map(item => ({ ...item, shop: shop.name }));
-    //         return { ...shop, items };
-    //     });
-
-    //     if (JSON.stringify(mapped) !== JSON.stringify(mappedShops)) {
-    //         setMappedShops(mapped);
-    //     }
-    // }, [selectedPriority, cart, shops]);
 
     useEffect(() => {
         const getGeoLocation = async () => {

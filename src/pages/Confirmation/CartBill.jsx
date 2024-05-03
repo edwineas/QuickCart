@@ -1,60 +1,48 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './CartBill.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import { useNavigate } from 'react-router-dom';
 
 const CartBill = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const mappedShops = location.state.mappedShops;
+
     const handleClick = () => {
         navigate('/postorder')
     }
+
     return (
         <div className="bill-container">
             <div className="cart-head">
-                <h1 className="cart-title"><ShoppingCartIcon 
-                    color="primary"
-                /> Cart</h1>
-                <p className="cart-subtitle">2 Items</p>
+                <h1 className="cart-title"> OrderBill</h1>
             </div>
-            <div className="item-container">
-                <h2 className="store-name">from Grocery A</h2>
-                <div className="item-view">
-                    <p className="item-name">Big onion</p>
-                    <div className="itemaddprice">
-                        <div className="quantity-selector">
-                            <RemoveIcon />
-                            <p className="quantity">1</p>
-                            <AddIcon />
+            {mappedShops.map((shop, index) => (
+                <div className="item-container" key={index}>
+                    <h2 className="store-name">{shop.shop_name}</h2>
+                    {shop.products.map((product, index) => (
+                        <div className="item-view" key={index}>
+                            <p className="item-name">{product.product}</p>
+                            <div className="itemaddprice">
+                                <p className="quantity">{product.quantity}</p>
+                                <p className="item-price">₹{product.price}</p>
+                            </div>
                         </div>
-                        <p className="item-price">₹55</p>
+                    ))}
+                    <div className="shopbillitem">
+                        <p className="bill-shop-total">Shop Price</p>
+                        <p className="bill-shop-total">₹{shop.total_price}</p>
                     </div>
                 </div>
-            </div>
+            ))}
             <div className="bill-details-container">
-                <h2 className="bill-details-title">Bill details</h2>
-                {/* <div className="billitem">
-                    <p className="bill-item-total">Item Total</p>
-                    <p className="bill-item-total-price">₹799.00</p>
-                </div>
-                <div className="billitem">
-                    <p className="bill-taxes-charges">Taxes and Charges i</p>
-                    <p className="bill-taxes-charges-price">₹2.0</p>
-                </div>
-                <div className="billitem">
-                    <p className="bill-total">Total</p>
-                    <p className="bill-total-price">₹11,400.00</p>
-                </div>
-                <div className="billitem">
-                    <p className="bill-discount">Discount</p>
-                    <p className="bill-discount-price">₹4000.00</p>
-                </div> */}
                 <div className="billitem">
                     <p className="bill-final-total">Total</p>
-                    <p className="bill-final-total-price">₹7,400.00</p>
+                    <p className="bill-final-total">₹{
+                        mappedShops.reduce((total, shop) => total + Number(shop.total_price), 0)
+                    }</p>
                 </div>
-
             </div>
             <button className="continue-button" onClick={handleClick}>Continue</button>
         </div>
