@@ -1,44 +1,27 @@
 import React from 'react';
-import './CheckoutItem.css'; // Import your CSS file
-import Rating from '../../images/star_rating.svg'; // Import your image file
-import Add from '../../images/add.svg';
-import Remove from '../../images/remove.svg';
+import './CheckoutItem.css';
+import Rating from '../../images/star_rating.svg';
 
-const CheckoutItem = ({ name, number, itemName, quantity, price, starRating, onQuantityChange }) => {
-  const handleQuantityIncrement = () => {
-    onQuantityChange(quantity + 1);
-  };
-
-  const handleQuantityDecrement = () => {
-    if (quantity > 0) {
-      onQuantityChange(quantity - 1);
-    }
-  };
-
+const CheckoutItem = ({ shop }) => {
+  // Calculate total price for all products in the shop
   return (
-    <>
-      <br />
-      <div className='item-box'>
-        <div>{name}</div>
-        <div className='rating'>
-        <img src={Rating} alt={`Rating: ${starRating}`} id="star" />
-        {starRating}
-        </div>
-        <div className='item-row'>
-          {number} {itemName}
-          <div className='quantity-control'>
-            <button id='Add' onClick={handleQuantityIncrement}><img src={Add} alt=''></img></button>
-            <span id='sp'>{quantity}</span>
-            <button id='Remove' onClick={handleQuantityDecrement}><img src={Remove} alt=''></img></button>
-          </div>
-          {price}
-        </div>
-        <div className='total'>
-          <div></div>
-          Total: {quantity * price}
-        </div>
+    <div className='item-box'>
+      <div>{shop.shop_name}</div>
+      <div className='rating'>
+        <img src={Rating} alt={`Rating: ${shop.shop_rating}`} id="star" />
+        {shop.shop_rating}
       </div>
-    </>
+      {shop.products.map((product, index) => (
+        <div key={index} className='item-row'>
+          <div>{index + 1} </div>
+          <div>{product.product}</div>
+          <div>{product.price}</div>
+        </div>
+      ))}
+      <div className='total'>
+        Total: {shop.total_price}
+      </div>
+    </div>
   );
 };
 

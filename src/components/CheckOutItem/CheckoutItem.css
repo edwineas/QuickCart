@@ -4,36 +4,24 @@
     width: 90%;
     margin: auto;
     border-radius: 10px;
+    margin-top: 20px;
   }
   
   .item-row {
     display: flex;
     justify-content: space-between; /* Distribute elements evenly */
     background-color: #F3F3F3;
+    margin-top: 10px;
     width: 100%;
     padding: 5px;
     border-radius: 10px 10px 0px 0px;
   }
   
   
-  
-  #Add,
-  #Remove {
-    /* Remove inline styles and margins */
-    margin: 0;
-    background-color: white;
-    border: 0px;
-  }
-  
-  .quantity-control {
-    display: flex; /* Wrap buttons and quantity */
-    align-items: center; /* Vertically align buttons and quantity */
-  }
-  
 .total{
   display: flex;
   justify-content: flex-end;
-  background-color: #F3F3F3;
+  /* background-color: #F3F3F3; */
   width: 100%;
   padding: 5px;
   border-radius: 0px 0px 10px 10px;
