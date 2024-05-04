@@ -27,6 +27,9 @@ const LoginPage = () => {
             if (res.data.role === 'shopkeeper') {
                 localStorage.setItem('shopId', res.data.shop_id);
             }
+            else if (res.data.role === 'customer') {
+                localStorage.setItem('customerId', res.data.customer_id);
+            }
             navigate('/');
         } catch (error) {
             if (error.response.status === 401) {
