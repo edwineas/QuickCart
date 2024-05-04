@@ -31,6 +31,7 @@ const CartPage = () => {
                 const res = await axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.REACT_APP_MAPS_API_KEY}`);
                 const { lat, lng } = res.data.location;
                 setUserLocation({ lat, lng });
+                console.log("cart", cart);
 
                 const orderRes = await axios.post(`${process.env.REACT_APP_DJANGO_URL}/orders/mapping/`, {
                     location: { lat, lng },

@@ -9,8 +9,49 @@ const CartBill = () => {
     const location = useLocation();
     const mappedShops = location.state.mappedShops;
 
-    const handleClick = () => {
-        navigate('/postorder')
+    const handleClick = async () => {
+        const customerId = localStorage.getItem('customerId');
+        const totalPrice = mappedShops.reduce((total, shop) => total + Number(shop.total_price), 0);
+
+        const orderData = {
+            customer_id: customerId,
+            total_price: totalPrice,
+            shops: mappedShops.map(shop => ({
+                shop_id: shop.shop.id,
+                shop_total_price: shop.total_price,
+                shop_name: shop.shop.name,
+                products: shop.products.map(product => ({
+                    product_id: product.id, // Assuming the product object has an id field
+                    product_name: product.product,
+                    product_price: product.price,
+                    product_quantity: product.quantity
+                }))
+            }))
+        };
+
+        try {
+            console.log(JSON.stringify(orderData));
+            const response = await fetch(`${process.env.REACT_APP_DJANGO_URL}/orders/create/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            });
+        
+            const data = await response.json();
+        
+            if (response.status === 201) {
+                console.log(data.message); // "Order created successfully"
+                navigate('/postorder');
+            } else if (response.status === 400 || response.status === 500) {
+                console.error(data.error); // Log the error message
+            } else {
+                console.error('Unexpected response:', data);
+            }
+        } catch (error) {
+            console.error('Failed to create order:', error);
+        }
     }
 
     return (
@@ -31,8 +72,7 @@ const CartBill = () => {
                         </div>
                     ))}
                     <div className="shopbillitem">
-                        <p className="bill-shop-total">Shop Price</p>
-                        <p className="bill-shop-total">₹{shop.total_price}</p>
+                        <p className="shop-total">Shop Total: ₹{shop.total_price}</p>
                     </div>
                 </div>
             ))}
