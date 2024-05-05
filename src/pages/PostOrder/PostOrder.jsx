@@ -1,41 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PostOrder.css'; // Import your custom CSS file to make the page attractive
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
+
+// Create a functional component named PostOrder
 const PostOrder = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { orderId } = location.state;
+  const [orders, setOrders] = useState([]);
   const handleClick = () => {
     navigate('/thankyou')
   }
-  // Sample data
-  const orders = [
-    { 
-      name: 'Elite Supermarket', 
-      rating: 4.7,
-      items: [
-        { name: 'Carrot', quantity: '2kg', price: '90' },
-        { name: 'Onion', quantity: '2kg', price: '76' }
-      ],
-      total: '166',
-      status: 'Packet received'
-    },
-    // Add more shops here...
-  ];
+
+
+
+  useEffect(() => {
+    const postOrder = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_DJANGO_URL}/orders/postorder/${orderId}/`);
+        console.log('Order posted:', response.data);
+        setOrders(response.data.shops);
+      } catch (error) {
+        console.error('Error posting order:', error);
+      }
+    };
+    console.log('order', orders)
+    postOrder();
+  }, [orderId]);
 
   return (
     <div className="postorder">
       <h1>Shop Proximity</h1>
       {orders.map((shop, index) => (
         <div key={index} className="shop-card">
-          <h3>{shop.name} ({shop.rating})</h3>
-          {shop.items.map((item, index) => (
+          <h3>{shop.shop_name}</h3>
+          {shop.products.map((item, index) => (
             <div key={index} className="item">
-              <span>{item.name}</span>
-              <span>{item.quantity}</span>
-              <span>{item.price}</span>
+              <span>{item.product_name}</span>
+              <span>{item.product_quantity}</span>
+              <span>{item.product_price}</span>
             </div>
           ))}
-          <p className="total">Total: {shop.total}</p>
-          <button className="status" onClick={handleClick}>{shop.status}</button>
+          <div className='totaldiv'><p className="total">Total: {shop.shop_price}</p></div>
+          <button className="status" onClick={handleClick}>{shop.packet_picked ? 'Picked' : 'Not Picked'}</button>
         </div>
       ))}
     </div>

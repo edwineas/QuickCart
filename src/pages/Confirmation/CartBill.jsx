@@ -28,7 +28,7 @@ const CartBill = () => {
                 }))
             }))
         };
-
+        let orderId;
         try {
             console.log(JSON.stringify(orderData));
             const response = await fetch(`${process.env.REACT_APP_DJANGO_URL}/orders/create/`, {
@@ -42,8 +42,9 @@ const CartBill = () => {
             const data = await response.json();
         
             if (response.status === 201) {
+                orderId = data.orderid;
                 console.log(data.message); // "Order created successfully"
-                navigate('/postorder');
+                navigate('/postorder', { state: { orderId } });
             } else if (response.status === 400 || response.status === 500) {
                 console.error(data.error); // Log the error message
             } else {
@@ -72,7 +73,8 @@ const CartBill = () => {
                         </div>
                     ))}
                     <div className="shopbillitem">
-                        <p className="shop-total">Shop Total: ₹{shop.total_price}</p>
+                        <p className="shop-total">Shop Total: </p>
+                        <p>₹{shop.total_price}</p>
                     </div>
                 </div>
             ))}

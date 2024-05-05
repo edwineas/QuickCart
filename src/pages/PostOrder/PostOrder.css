@@ -17,6 +17,8 @@
 }
 
 .shop-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 20px;
@@ -36,10 +38,20 @@
   margin-bottom: 10px;
 }
 
+.totaldiv {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  color: #666;
+  margin-bottom: 10px;
+}
+
 .total {
+  width: 100%;
   text-align: right;
   color: #666;
   margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .status {

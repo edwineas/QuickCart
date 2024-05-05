@@ -29,6 +29,7 @@ const CartPage = () => {
         const getGeoLocation = async () => {
             try {
                 const res = await axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.REACT_APP_MAPS_API_KEY}`);
+                console.log("uses geolocation for location");
                 const { lat, lng } = res.data.location;
                 setUserLocation({ lat, lng });
                 console.log("cart", cart);
