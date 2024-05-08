@@ -19,11 +19,13 @@ function ForgotPassword() {
             <div className='forgothead'>
                 Find Your Account
             </div>
+            <hr></hr>
             <div className='forgotpara'>
             <p>Please enter your email address or mobile number to search for your account.</p>
-            </div>
             <input type='text' className='forgotinput' placeholder='Email address or mobile number'></input>
+            </div>
             
+            <hr></hr>
             <div className='forgot-btns'>
                 <button className='cancelbutton' onClick={handleSubmit} >Cancel</button>
                 <button className='searchbutton'>Search</button>
