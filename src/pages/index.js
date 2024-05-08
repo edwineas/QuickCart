@@ -16,3 +16,4 @@ export { default as CartList } from './CartList/CartList';
 export { default as Inventory } from './Inventory/Inventory';
 export { default as OrderDetails } from './OrderDetails/OrderDetails';
 export { default as ShopkeeperDashboard } from './ShopkeeperDashboard/ShopkeeperDashboard';
+export { default as ForgotPassword } from './Register/ForgotPassword'
