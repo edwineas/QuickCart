@@ -15,9 +15,9 @@ function CartList() {
     return (
         <>
             <div className='listdiv'>
-                <h1>Cart List</h1>
-                <CartItems items={cart} />
+                <h1>Cart List</h1>   
             </div>
+            <CartItems items={cart} />
             <div className="bttn">
                 <button type="submit" className='sbtn' onClick={handleClick}>Submit</button>
             </div>

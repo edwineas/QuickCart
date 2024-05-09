@@ -65,3 +65,25 @@
   padding: 9px 15px !important;
   margin: 0 6px !important;
 }
+
+@media (max-width: 600px) {
+  #shops {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    padding-right: 7px;
+  }
+
+  .product-name {
+    padding: 0px 3px;
+  }
+
+  button {
+    font-size: smaller;
+    width: 115px;
+  }
+
+  .product-name {
+    text-align: center;
+  }
+}

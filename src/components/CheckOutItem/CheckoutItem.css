@@ -35,3 +35,9 @@
 #sp {
   padding: 0 7px;
 }
+
+@media screen and (max-width: 460px) {
+  .item-box {
+    width: 75%;
+  }
+}

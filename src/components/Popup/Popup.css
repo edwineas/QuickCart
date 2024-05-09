@@ -1,4 +1,4 @@
-
+/* 
 
 .outer{
   position: fixed;
@@ -18,7 +18,7 @@
   padding: 32px;
   width: 100%;
   max-width: 640px;
-  /* backdrop-filter: blur(100px); */
+  
   background-color: white;
   border: solid black 1px;
 }
@@ -42,7 +42,7 @@
 
 .vegetable-image{
   height: 200px;
-  width: 200px; /* Make the image occupy full width on a new line */
+  width: 200px; 
   border-radius: 50%;
   padding-bottom: 10px;
 }
@@ -76,4 +76,96 @@
 .vegetable-price{
   display: flex;
   justify-content: center;
+} */
+.outer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-container {
+  padding: 16px;
+  width: 90%; /* Adjust width for smaller screens */
+  max-width: 300px; /* Max-width for larger screens */
+  background-color: white;
+  border: solid black 1px;
+  text-align: center;
+  padding-top: 45px;
+}
+
+.popup-container .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.popup-content {
+  margin-top: 10px;
+}
+
+.vegetable-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.add-btn {
+  display: block;
+  background-color: #435bda;
+  color: white;
+  border-radius: 15px;
+  padding: 7px 12px;
+  margin-top: 10px;
+  width: 100%; /* Make button full width */
+}
+
+.incr-item,
+.decr-item {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+#qty {
+  margin: 0px 10px 5px 10px;
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Media Query for iPhone 12 Pro */
+@media screen and (max-width: 390px) {
+  .outer {
+    width: 95%;
+  }
+
+  .popup-container {
+    max-width: 320px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    max-width: fit-content;
+    max-height: fit-content;
+  }
 }

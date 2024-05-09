@@ -5,6 +5,7 @@
     justify-content: space-between; /* Align items horizontally */
     width: 100%; /* Ensure full width for Flexbox distribution */
     /* margin: 0 auto; */
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
     flex-direction: column; /* Stack elements vertically */
     justify-content: space-between; /* Center the container horizontally (optional) */
 }
@@ -18,7 +19,7 @@
 
 .feed-h1 {
     margin-top: 20px;
-    margin-left: 152px;
+    /* margin-left: 152px; */
     font-weight: bold;
     font-size: larger;
     padding-bottom: 15px;
@@ -26,8 +27,8 @@
 }
 
 .carousel {
-    margin-left: 152px;
-    margin-right: 152px;
+    /* margin-left: 152px; */
+    /* margin-right: 152px; */
     display: flex;
     overflow-x: auto;
     white-space: nowrap; /* Prevent line breaks */
@@ -49,8 +50,8 @@
   }
 
 .grid-card-list {
-    margin-left: 152px;
-    margin-right: 152px;
+    /* margin-left: 152px; */
+    /* margin-right: 152px; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust as needed */
     gap: 20px; /* Adjust gap between cards */
@@ -68,14 +69,22 @@
     height: 375px;
 }
 
+.carousel-container {
+    padding: 0rem 1rem;
+}
+
+.gridcardlist {
+    padding: 0rem 1rem;
+}
+
 /* The media query for the mobile view is as follows: */
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
 
     .carousel {
         /* background-color: blueviolet; */
-        margin-left: 45px;
-        margin-right: 0px;
+        /* margin-left: 20px; */
+        /* margin-right: 0px; */
 
     }
 
@@ -87,12 +96,12 @@
     }
 
     .carousel-item {
-        margin-right: 15px;
+        /* margin-right: 15px; */
     }
 
     .grid-card-list {
-        margin-left: 52px;
-        margin-right: 0px;
+        /* margin-left: 20px;
+        margin-right: 0px; */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust as needed */
         gap: 20px; /* Adjust gap between cards */
@@ -101,12 +110,15 @@
 
     .feed-h1 {
         margin-top: 20px;
-        margin-left: 45px;
+        /* margin-left: 20px; */
     }
 
     .grid-card{
-        margin: 10px 0px;
+        /* margin: 10px 0px; */
     }
 
+    .carousel-container {
+        /* margin-left: 20px; */
+    }
 
 }

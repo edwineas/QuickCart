@@ -6,7 +6,7 @@ function CartItems({ items = [] }) {
   const { increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
   return (
-    <div>
+    <div className='cart-parent'>
       {Array.isArray(items) && items.map((item, index) => (
         <div className="cart-item" key={item.id}>
           <h2 >{item.name}</h2>

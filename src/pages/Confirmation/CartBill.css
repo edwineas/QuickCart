@@ -8,6 +8,7 @@
     min-height: fit-content;
     margin: auto;
     /* margin: auto; */
+    margin-top: 50px;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -124,3 +125,4 @@
     cursor: pointer;
     width: 100%;
 }
+
